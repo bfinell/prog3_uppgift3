@@ -12,8 +12,10 @@ import java.util.ArrayList;
 
 public class DataFromURL {
     private ArrayList<JsonObject> data = new ArrayList<>();
-    private ArrayList<String> keyset,keyset2 = new ArrayList<>();
-    private ArrayList<String> open,open2 = new ArrayList<>();
+    private ArrayList<String> keyset = new ArrayList<>();
+    private ArrayList<String> keyset2 = new ArrayList<>();
+    private ArrayList<String> open = new ArrayList<>();
+    private ArrayList<String> open2 = new ArrayList<>();
     private String start,stop;
     private String URL1,URL2;
     private String dSeries;
@@ -49,8 +51,6 @@ public class DataFromURL {
 
             for (int i = 0; i<obj.get(tempObj).getAsJsonObject().size(); i++){
                 keyset.add(parts[i]);
-                System.out.println(keyset.get(i));
-                System.out.println("a");
             }
             open.add(obj.get(tempObj).getAsJsonObject().get(keyset.get(0)).getAsJsonObject().get(dSeries).toString());
             for (int i = 1; i<keyset.size();i++){
@@ -114,6 +114,11 @@ public class DataFromURL {
     }
 
     public ArrayList<String> getOpen2() {
+        if (open2.isEmpty()){
+            for (String a:open){
+                open2.add("0");
+            }
+        }
         return open2;
     }
 
@@ -123,6 +128,11 @@ public class DataFromURL {
     }
 
     public ArrayList<String> getKeyset2() {
+        if (keyset2.isEmpty()){
+            for (String a:keyset){
+                keyset2.add("0");
+            }
+        }
         return keyset2;
     }
 }

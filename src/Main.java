@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class Main extends Application {
- //   static ArrayList <String> parameters = new ArrayList<>();
+    static ArrayList <String> parameters = new ArrayList<>();
     public static void main(String[] args) {
         launch(args);
     }
