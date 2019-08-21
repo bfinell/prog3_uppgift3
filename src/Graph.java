@@ -22,7 +22,7 @@ public class Graph {
 
     }
     public void setGraph(){
-        this.graph.getData().clear();
+//        this.graph.getData().clear();
         XYChart.Series<Number, Number> series = new XYChart.Series<>();
         series.setName(symbol1);
 

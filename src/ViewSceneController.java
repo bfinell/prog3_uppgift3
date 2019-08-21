@@ -102,8 +102,13 @@ public class ViewSceneController {
         DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),urlBuilder.getFinalURL2(),
                 startDate.getText(),stopDate.getText(),dataSeries.getValue());
 
+            setData(dataFromURL.getKeyset(),dataFromURL.getOpen(),dataFromURL.getOpen2(),
+                    dataFromURL.getStart(),dataFromURL.getStop());
+
+
         setData(dataFromURL.getKeyset(),dataFromURL.getOpen(),dataFromURL.getOpen2(),
                 dataFromURL.getStart(),dataFromURL.getStop());
+
         Graph g = new Graph(symbol.getValue(),dataFromURL.getOpen(),dataFromURL.getKeyset(),symbol2.getValue(),
                 dataFromURL.getOpen2(),dataFromURL.getKeyset2(),dataFromURL.getStart(),dataFromURL.getStop());
         g.setGraph();
