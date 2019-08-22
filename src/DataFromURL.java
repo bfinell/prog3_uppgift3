@@ -70,7 +70,7 @@ public class DataFromURL {
                 URLConnection request = url.openConnection();
                 request.connect();
 
-                JsonParser jp = new JsonParser();
+                JsonParse9r jp = new JsonParser();
                 JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent())); //Convert the input stream to a json element
                 JsonObject obj = root.getAsJsonObject();
 
