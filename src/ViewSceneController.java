@@ -94,27 +94,33 @@ public class ViewSceneController {
 
 
     @FXML
-    protected void handledoQueryAction(ActionEvent event) throws InvalidFormatException{
-        tArea.clear();
+    protected void handleQueryAction(ActionEvent event) throws InvalidFormatException{
+        //tArea.clear();
         URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(),timeSeries.getValue(),
                 symbol.getValue(),symbol2.getValue(),timeInterval.getValue() ,size.getValue(),API_KEY.getValue());
 
         DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),urlBuilder.getFinalURL2(),
                 startDate.getText(),stopDate.getText(),dataSeries.getValue());
 
-            setData(dataFromURL.getKeyset(),dataFromURL.getOpen(),dataFromURL.getOpen2(),
-                    dataFromURL.getStart(),dataFromURL.getStop());
-
-
         setData(dataFromURL.getKeyset(),dataFromURL.getOpen(),dataFromURL.getOpen2(),
-                dataFromURL.getStart(),dataFromURL.getStop());
+                    dataFromURL.getStart(),dataFromURL.getStop());
 
         Graph g = new Graph(symbol.getValue(),dataFromURL.getOpen(),dataFromURL.getKeyset(),symbol2.getValue(),
                 dataFromURL.getOpen2(),dataFromURL.getKeyset2(),dataFromURL.getStart(),dataFromURL.getStop());
         g.setGraph();
+        XYChart.Series<Number,Number> series = new XYChart.Series<>();
+        //XYChart.Series
+
+                //hämt series från graph o kör här
+        series.setName(symbol.getValue());
+        if (symbol2.getValue()!=""){
+        }
+        this.graph.getData().add(series);
+
 
         PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
-        p.calculate();
+
+        pearson.setText(String.valueOf(p.calculate()));
 
     }
     @FXML
@@ -135,22 +141,25 @@ public class ViewSceneController {
 
 
     private void setData(ArrayList date, ArrayList price,ArrayList price2,int start, int stop) {
-        date.remove(date.size() - 1);
-        System.out.println(price.size());
+        date.remove(date.size() -1);
+        System.out.println("price "+price.size()+"2 "+price2.size());
         System.out.println(date.get(2));
-
+        int max = price.size()-2;
+        if (max>price2.size()){
+            max=price2.size()-1;
+        }
         if (symbol2.getValue() != "") {
-            for (int i = price.size() - 1; i >= 0; i--) {
+            for (int i = max; i >= 0; i--) {
 
                 int temp = Integer.parseInt(date.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));
                 if (temp >= start && temp <= stop) {
+
                     tArea.appendText("Date:" + date.get(i) + " " + dataSeries.getValue().substring(3) + "  " + symbol.getValue() + " " + price.get(i).toString().replace("\"", "") + "   " + symbol2.getValue() + "" +
                             ": " + price2.get(i).toString().replace("\"", "") + "\n");
                 }
             }
-
         } else {
-            for (int i = price.size() - 1; i >= 0; i--) {
+            for (int i =max; i >= 0; i--) {
 
                 int temp = Integer.parseInt(date.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));
                 if (temp >= start && temp <= stop) {
