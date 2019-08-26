@@ -10,18 +10,18 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="619.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewSceneController">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewSceneController">
     <children>
-        <ComboBox fx:id="dataSeries" layoutX="139.0" layoutY="40.0" onAction="#handledoQueryAction" prefWidth="200.0" promptText="1.open" value="1. open" />
+        <ComboBox fx:id="dataSeries" layoutX="139.0" layoutY="40.0" onAction="#handleQueryAction" prefWidth="200.0" promptText="1.open" value="1. open" />
         <ComboBox fx:id="timeSeries" layoutX="139.0" layoutY="79.0" onAction="#handleTimeSeriesAction" prefWidth="200.0" promptText="TIME_SERIES_INTRADAY" value="TIME_SERIES_INTRADAY" />
         <ComboBox fx:id="symbol" editable="true" layoutX="139.0" layoutY="118.0" prefWidth="200.0" promptText="MSFT" value="MSFT" />
         <ComboBox fx:id="symbol2" editable="true" layoutX="139.0" layoutY="154.0" prefWidth="200.0" promptText="" value="" />
         <ComboBox fx:id="timeInterval" layoutX="139.0" layoutY="198.0" prefWidth="200.0" promptText="15 min" value="15min" />
         <ComboBox fx:id="size" layoutX="139.0" layoutY="240.0" prefHeight="28.0" prefWidth="200.0" promptText="full" value="full" />
-        <TextArea fx:id="tArea" layoutX="400.0" layoutY="348.0" prefHeight="200.0" prefWidth="365.0" />
+        <TextArea fx:id="tArea" layoutX="400.0" layoutY="322.0" prefHeight="200.0" prefWidth="365.0" />
         <ComboBox fx:id="API_KEY" editable="true" layoutX="139.0" layoutY="2.0" prefWidth="200.0" promptText="demo" value="ZR69NHOOT7AMCZH8" />
-        <TextField fx:id="startDate" layoutX="139.0" layoutY="284.0" text="2019.04.14" />
-        <TextField fx:id="stopDate" layoutX="139.0" layoutY="322.0" text="2019.06.09" />
+        <TextField fx:id="startDate" layoutX="139.0" layoutY="284.0" text="2019.07.14" />
+        <TextField fx:id="stopDate" layoutX="139.0" layoutY="322.0" text="2019.08.09" />
         <TextField fx:id="pearson" layoutX="139.0" layoutY="436.0" />
 
         <Label layoutX="25.0" layoutY="114.0" prefHeight="26.0" prefWidth="100.0" text="Symbol 1" />
@@ -29,7 +29,7 @@
         <Label layoutX="25.0" layoutY="198.0" prefHeight="26.0" prefWidth="100.0" text="Time Interval" />
         <Label layoutX="25.0" layoutY="241.0" prefHeight="26.0" prefWidth="100.0" text="Output Size" />
         <Label layoutX="25.0" layoutY="36.0" prefHeight="26.0" prefWidth="100.0" text="Data Series" />
-        <Button fx:id="doQuery" layoutX="142.0" layoutY="365.0" mnemonicParsing="false" onAction="#handledoQueryAction" text="---- Do query ----" />
+        <Button fx:id="doQuery" layoutX="142.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleQueryAction" text="---- Do query ----" />
         <LineChart fx:id="graph" layoutX="366.0" layoutY="11.0" prefHeight="319.0" prefWidth="365.0">
             <xAxis>
                 <CategoryAxis side="BOTTOM" />

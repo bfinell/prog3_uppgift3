@@ -8,14 +8,29 @@ public class PearsonCorrelation {
     public PearsonCorrelation(ArrayList open1,ArrayList open2){
     this.open1=open1;
     this.open2=open2;
+
     }
     public double calculate(){
+
+        while(open1.size()!=open2.size()){
+            if (open1.size()>open2.size()){
+                open1.remove(open1.size()-1);
+            }
+            else {open2.remove(open2.size()-1);}
+        }
         double[] a=new double[open1.size()];
         double[] b=new double[open2.size()];
-        for (int i = 0; i<open1.size(); i++){
+        int max = open2.size();
+
+
+        for (int i = 0; i<max; i++){
             a[i]=Double.parseDouble(open1.get(i).replace("\"",""));
             b[i]=Double.parseDouble(open2.get(i).replace("\"", ""));
         }
+        System.out.println("pears  "+a.length+"ss"+b.length);
+
+
+
         double corr = new PearsonsCorrelation().correlation(a,b);
         return corr;
     }
