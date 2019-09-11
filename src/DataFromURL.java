@@ -61,8 +61,8 @@ public class DataFromURL {
 
         }catch (IOException | NullPointerException e){
 
-        }
 
+        }
         if ((URL2!=null)){
             System.out.println(URL2);
             try{
