@@ -10,12 +10,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.ini4j.*;
-
-import java.awt.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import com.sun.media.sound.InvalidFormatException;
+
+import javax.swing.*;
 
 import static java.awt.SystemColor.info;
 
@@ -24,11 +24,13 @@ public class ViewSceneController {
     @FXML
     private TextArea tArea;
     @FXML
-    private Button doQuery;
+    private Button doQuery,buyButton,sellButton;
     @FXML
-    private ComboBox<String> dataSeries;
+    private ComboBox<String> buySockList,sellStockList;
+   /// @FXML
+ //   private ComboBox<String> dataSeries;
     @FXML
-    private ComboBox<String> timeSeries;
+    private ComboBox<String> timeSeries,dataSeries;
     @FXML
     private ComboBox<String> symbol;
     @FXML
@@ -40,13 +42,17 @@ public class ViewSceneController {
     @FXML
     private ComboBox<String> API_KEY;
     @FXML
-    private LineChart<Number,Number> stock_Graph;
+    private LineChart<Number,Number> graph;
     @FXML
     private TextField startDate;
     @FXML
     private TextField stopDate;
     @FXML
     private TextField pearson;
+
+
+    private XYChart.Series<Number,Number> series = new XYChart.Series<>();
+    private XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
 
 
     ObservableList<String> apiKey = FXCollections.observableArrayList();
@@ -56,8 +62,6 @@ public class ViewSceneController {
     ObservableList<String> symbol2List = FXCollections.observableArrayList();
     ObservableList<String> tiList = FXCollections.observableArrayList();
     ObservableList<String> sizeList = FXCollections.observableArrayList();
-
-
 
 
     private void fillLists()throws IOException{
@@ -101,8 +105,7 @@ public class ViewSceneController {
 
     @FXML
     protected void handleQueryAction(ActionEvent event) throws InvalidFormatException{
-        tArea.clear();
-        tArea.setScrollTop(Integer.MIN_VALUE);
+        //tArea.clear();
         URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(),timeSeries.getValue(),
                 symbol.getValue(),symbol2.getValue(),timeInterval.getValue() ,size.getValue(),API_KEY.getValue());
 
@@ -114,30 +117,30 @@ public class ViewSceneController {
 
         Graph g = new Graph(symbol.getValue(),dataFromURL.getOpen(),dataFromURL.getKeyset(),symbol2.getValue(),
                 dataFromURL.getOpen2(),dataFromURL.getKeyset2(),dataFromURL.getStart(),dataFromURL.getStop());
-      //  g.setGraph();
-        //XYChart.Series
+        g.setGraph();
+        setGraph(g.getSeries(),symbol.getValue());
+        if (symbol2.getValue()!=""){
+        System.out.println("got through if statment");
+            setGraph(g.getSeries2(),symbol2.getValue());
 
-        this.stock_Graph.getData().clear();
-
-        XYChart.Series<Number,Number> series = new XYChart.Series<>();
-
-                //hämt series från graph o kör här
-        series.setName(symbol.getValue());
-        series.getData().add(new XYChart.Data(1, 20));
-        series.getData().add(new XYChart.Data(2, 30));
-        series.getData().add(new XYChart.Data(3, 50));
-        series.getData().add(new XYChart.Data(4, 30));
-        series.getData().add(new XYChart.Data(5, 20));
-        //series.setName("benis");
-        this.stock_Graph.getData().add(series);
-
-        if (!symbol2.getValue().isEmpty()){
-            XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
-            series2.setName(symbol2.getValue());
         }
 
 
 
+     /*   XYChart.Series<Number,Number> series = new XYChart.Series<>();
+        //XYChart.Series
+      //  XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
+      //  series2.setName(symbol2.getValue());
+                //hämt series från graph o kör här
+        series.setName(symbol.getValue());
+        if (symbol2.getValue()!=""){
+            XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
+            series2.setName(symbol2.getValue());
+            this.graph.getData().add(series2);
+
+        }
+        this.graph.getData().add(series);
+*/
         PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
 
         pearson.setText(String.valueOf(p.calculate()));
@@ -161,17 +164,15 @@ public class ViewSceneController {
 
 
     private void setData(ArrayList date, ArrayList price,ArrayList price2,int start, int stop) {
-        if (!date.isEmpty()) {
-            date.remove(date.size() - 1);
-        }
+        date.remove(date.size() -1);
         System.out.println("price "+price.size()+"2 "+price2.size());
         System.out.println(date.get(2));
         int max = price.size()-1;
-        if (max>=price2.size()){
+        if (max>price2.size()){
             max=price2.size()-1;
         }
         if (symbol2.getValue() != "") {
-            for (int i = max; i >0; i--) {
+            for (int i = max-1; i >= 0; i--) {
 
                 int temp = Integer.parseInt(date.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));
                 if (temp >= start && temp <= stop) {
@@ -189,5 +190,10 @@ public class ViewSceneController {
                 }
             }
         }
+    }
+
+    public void setGraph(XYChart.Series<Number,Number> data,String s) {
+        this.series.setName(s);
+        this.graph.getData().add(data);
     }
 }
