@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import com.sun.media.sound.InvalidFormatException;
 
+import javax.swing.*;
+
 import static java.awt.SystemColor.info;
 
 
@@ -22,11 +24,13 @@ public class ViewSceneController {
     @FXML
     private TextArea tArea;
     @FXML
-    private Button doQuery;
+    private Button doQuery,buyButton,sellButton;
     @FXML
-    private ComboBox<String> dataSeries;
+    private ComboBox<String> buySockList,sellStockList;
+   /// @FXML
+ //   private ComboBox<String> dataSeries;
     @FXML
-    private ComboBox<String> timeSeries;
+    private ComboBox<String> timeSeries,dataSeries;
     @FXML
     private ComboBox<String> symbol;
     @FXML
@@ -46,6 +50,11 @@ public class ViewSceneController {
     @FXML
     private TextField pearson;
 
+
+    private XYChart.Series<Number,Number> series = new XYChart.Series<>();
+    private XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
+
+
     ObservableList<String> apiKey = FXCollections.observableArrayList();
     ObservableList<String> dList = FXCollections.observableArrayList();
     ObservableList<String> tsList = FXCollections.observableArrayList();
@@ -53,6 +62,7 @@ public class ViewSceneController {
     ObservableList<String> symbol2List = FXCollections.observableArrayList();
     ObservableList<String> tiList = FXCollections.observableArrayList();
     ObservableList<String> sizeList = FXCollections.observableArrayList();
+
 
     private void fillLists()throws IOException{
         Ini ini = new Ini(new FileReader("./src/StockAnalyzer.ini"));
@@ -108,16 +118,29 @@ public class ViewSceneController {
         Graph g = new Graph(symbol.getValue(),dataFromURL.getOpen(),dataFromURL.getKeyset(),symbol2.getValue(),
                 dataFromURL.getOpen2(),dataFromURL.getKeyset2(),dataFromURL.getStart(),dataFromURL.getStop());
         g.setGraph();
-        XYChart.Series<Number,Number> series = new XYChart.Series<>();
-        //XYChart.Series
+        setGraph(g.getSeries(),symbol.getValue());
+        if (symbol2.getValue()!=""){
+        System.out.println("got through if statment");
+            setGraph(g.getSeries2(),symbol2.getValue());
 
+        }
+
+
+
+     /*   XYChart.Series<Number,Number> series = new XYChart.Series<>();
+        //XYChart.Series
+      //  XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
+      //  series2.setName(symbol2.getValue());
                 //hämt series från graph o kör här
         series.setName(symbol.getValue());
         if (symbol2.getValue()!=""){
+            XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
+            series2.setName(symbol2.getValue());
+            this.graph.getData().add(series2);
+
         }
         this.graph.getData().add(series);
-
-
+*/
         PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
 
         pearson.setText(String.valueOf(p.calculate()));
@@ -144,12 +167,12 @@ public class ViewSceneController {
         date.remove(date.size() -1);
         System.out.println("price "+price.size()+"2 "+price2.size());
         System.out.println(date.get(2));
-        int max = price.size()-2;
+        int max = price.size()-1;
         if (max>price2.size()){
             max=price2.size()-1;
         }
         if (symbol2.getValue() != "") {
-            for (int i = max; i >= 0; i--) {
+            for (int i = max-1; i >= 0; i--) {
 
                 int temp = Integer.parseInt(date.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));
                 if (temp >= start && temp <= stop) {
@@ -167,4 +190,10 @@ public class ViewSceneController {
                 }
             }
         }
-    }}
+    }
+
+    public void setGraph(XYChart.Series<Number,Number> data,String s) {
+        this.series.setName(s);
+        this.graph.getData().add(data);
+    }
+}

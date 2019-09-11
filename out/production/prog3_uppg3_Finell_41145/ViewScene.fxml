@@ -9,28 +9,30 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewSceneController">
+<AnchorPane prefHeight="609.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewSceneController">
     <children>
+      <TextField id="buyDate" layoutX="81.0" layoutY="448.0" prefHeight="25.0" prefWidth="100.0" />
         <ComboBox fx:id="dataSeries" layoutX="139.0" layoutY="40.0" onAction="#handleQueryAction" prefWidth="200.0" promptText="1.open" value="1. open" />
         <ComboBox fx:id="timeSeries" layoutX="139.0" layoutY="79.0" onAction="#handleTimeSeriesAction" prefWidth="200.0" promptText="TIME_SERIES_INTRADAY" value="TIME_SERIES_INTRADAY" />
         <ComboBox fx:id="symbol" editable="true" layoutX="139.0" layoutY="118.0" prefWidth="200.0" promptText="MSFT" value="MSFT" />
         <ComboBox fx:id="symbol2" editable="true" layoutX="139.0" layoutY="154.0" prefWidth="200.0" promptText="" value="" />
         <ComboBox fx:id="timeInterval" layoutX="139.0" layoutY="198.0" prefWidth="200.0" promptText="15 min" value="15min" />
         <ComboBox fx:id="size" layoutX="139.0" layoutY="240.0" prefHeight="28.0" prefWidth="200.0" promptText="full" value="full" />
-        <TextArea fx:id="tArea" layoutX="400.0" layoutY="322.0" prefHeight="200.0" prefWidth="365.0" />
-        <ComboBox fx:id="API_KEY" editable="true" layoutX="139.0" layoutY="2.0" prefWidth="200.0" promptText="demo" value="ZR69NHOOT7AMCZH8" />
+        <TextArea fx:id="tArea" layoutX="394.0" layoutY="266.0" prefHeight="138.0" prefWidth="359.0" />
+        <ComboBox fx:id="API_KEY" editable="true" layoutX="139.0" layoutY="7.0" prefWidth="200.0" promptText="demo" value="ZR69NHOOT7AMCZH8" />
         <TextField fx:id="startDate" layoutX="139.0" layoutY="284.0" text="2019.07.14" />
         <TextField fx:id="stopDate" layoutX="139.0" layoutY="322.0" text="2019.08.09" />
-        <TextField fx:id="pearson" layoutX="139.0" layoutY="436.0" />
+        <TextField fx:id="pearson" layoutX="139.0" layoutY="382.0" />
 
         <Label layoutX="25.0" layoutY="114.0" prefHeight="26.0" prefWidth="100.0" text="Symbol 1" />
         <Label layoutX="25.0" layoutY="75.0" prefHeight="26.0" prefWidth="100.0" text="Time Series" />
         <Label layoutX="25.0" layoutY="198.0" prefHeight="26.0" prefWidth="100.0" text="Time Interval" />
         <Label layoutX="25.0" layoutY="241.0" prefHeight="26.0" prefWidth="100.0" text="Output Size" />
         <Label layoutX="25.0" layoutY="36.0" prefHeight="26.0" prefWidth="100.0" text="Data Series" />
-        <Button fx:id="doQuery" layoutX="142.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleQueryAction" text="---- Do query ----" />
-        <LineChart fx:id="graph" layoutX="366.0" layoutY="11.0" prefHeight="319.0" prefWidth="365.0">
+        <Button fx:id="doQuery" layoutX="139.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleQueryAction" text="---- Do query ----" />
+        <LineChart fx:id="graph" layoutX="351.0" layoutY="7.0" prefHeight="265.0" prefWidth="394.0">
             <xAxis>
                 <CategoryAxis side="BOTTOM" />
             </xAxis>
@@ -38,11 +40,27 @@
                 <NumberAxis side="LEFT" />
             </yAxis>
         </LineChart>
-        <Label layoutX="25.0" layoutY="2.0" prefHeight="26.0" prefWidth="100.0" text="API_KEY" />
+        <Label layoutX="25.0" layoutY="7.0" prefHeight="26.0" prefWidth="100.0" text="API_KEY" />
 
         <Label layoutX="25.0" layoutY="284.0" prefHeight="26.0" prefWidth="100.0" text="Start Date" />
         <Label layoutX="25.0" layoutY="322.0" prefHeight="26.0" prefWidth="100.0" text="Stop Date" />
         <Label layoutX="25.0" layoutY="154.0" prefHeight="26.0" prefWidth="100.0" text="Symbol 2" />
-        <Label layoutX="25.0" layoutY="436.0" prefHeight="26.0" prefWidth="110.0" text="Pearson Correlation" />
+        <Label layoutX="25.0" layoutY="382.0" prefHeight="26.0" prefWidth="110.0" text="Pearson Correlation" />
+      <Button id="buyButton" layoutX="239.0" layoutY="485.0" mnemonicParsing="false" text="buy" />
+      <Text layoutX="325.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="portofolio" />
+      <Text layoutX="25.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+      <ComboBox id="buyStockList" layoutX="80.0" layoutY="485.0" prefWidth="150.0" />
+      <Text layoutX="26.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="stock" />
+      <TextArea id="StockTextArea" layoutX="394.0" layoutY="454.0" prefHeight="138.0" prefWidth="359.0" />
+      <Text layoutX="193.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="amount" />
+      <TextField id="buyAmount" layoutX="239.0" layoutY="448.0" prefHeight="25.0" prefWidth="79.0" />
+      <Text layoutX="26.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="stock" />
+      <Text layoutX="25.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+      <TextField id="sellDate" layoutX="81.0" layoutY="523.0" prefHeight="25.0" prefWidth="100.0" />
+      <Text layoutX="193.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="amount" />
+      <TextField id="sellAmount" layoutX="239.0" layoutY="523.0" prefHeight="25.0" prefWidth="79.0" />
+      <ComboBox id="sellStockList" layoutX="80.0" layoutY="557.0" prefWidth="150.0" />
+      <Button id="sellButton" layoutX="239.0" layoutY="557.0" mnemonicParsing="false" text="sell" />
+
     </children>
 </AnchorPane>
