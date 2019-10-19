@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b957241-1b79-417d-9b9f-9190aa525bd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Stocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddStocks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Portfolios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Portfolios.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ViewSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewSceneController.java" afterDir="false" />
     </list>
@@ -105,7 +103,10 @@
       <workItem from="1566375638026" duration="1755000" />
       <workItem from="1566468740588" duration="769000" />
       <workItem from="1566491278695" duration="14951000" />
-      <workItem from="1568198506604" duration="5848000" />
+      <workItem from="1568198506604" duration="6128000" />
+      <workItem from="1568467191452" duration="1342000" />
+      <workItem from="1570443600379" duration="6783000" />
+      <workItem from="1571308900020" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="~">
       <created>1566375690417</created>
@@ -127,7 +128,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1566768923823</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="graph working. also added frontend for portofolio">
+      <created>1568204394485</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1568204394485</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +157,7 @@
     <MESSAGE value="~" />
     <MESSAGE value="added librarys" />
     <MESSAGE value="fixed a few bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a few bugs" />
+    <MESSAGE value="graph working. also added frontend for portofolio" />
+    <option name="LAST_COMMIT_MESSAGE" value="graph working. also added frontend for portofolio" />
   </component>
 </project>

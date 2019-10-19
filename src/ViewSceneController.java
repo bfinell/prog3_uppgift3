@@ -44,12 +44,12 @@ public class ViewSceneController {
     @FXML
     private LineChart<Number,Number> graph;
     @FXML
-    private TextField startDate;
-    @FXML
-    private TextField stopDate;
+    private TextField startDate,stopDate;
     @FXML
     private TextField pearson;
-
+    @FXML
+    private ComboBox portfoliobox;
+    @FXML TextField buyAmount,sellAmount;
 
     private XYChart.Series<Number,Number> series = new XYChart.Series<>();
     private XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
@@ -125,26 +125,19 @@ public class ViewSceneController {
 
         }
 
-
-
-     /*   XYChart.Series<Number,Number> series = new XYChart.Series<>();
-        //XYChart.Series
-      //  XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
-      //  series2.setName(symbol2.getValue());
-                //hämt series från graph o kör här
-        series.setName(symbol.getValue());
-        if (symbol2.getValue()!=""){
-            XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
-            series2.setName(symbol2.getValue());
-            this.graph.getData().add(series2);
-
-        }
-        this.graph.getData().add(series);
-*/
         PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
 
         pearson.setText(String.valueOf(p.calculate()));
 
+    }
+    @FXML
+    private void AddPortfolio(ActionEvent event)throws InvalidFormatException{
+        Portfolios portfolios = new Portfolios(portfoliobox.getValue().toString());
+        portfolios.addStocks(buySockList.getValue(),Integer.parseInt(buyAmount.toString()));
+    }
+    @FXML private void handlePortfolioActin(ActionEvent event){
+
+bv 1
     }
     @FXML
     private void handleTimeSeriesAction(ActionEvent event){
