@@ -47,11 +47,10 @@
         <Label layoutX="25.0" layoutY="154.0" prefHeight="26.0" prefWidth="100.0" text="Symbol 2" />
         <Label layoutX="25.0" layoutY="382.0" prefHeight="26.0" prefWidth="110.0" text="Pearson Correlation" />
       <Button id="buyButton" layoutX="239.0" layoutY="485.0" mnemonicParsing="false" text="buy" />
-      <Text layoutX="325.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="portofolio" />
       <Text layoutX="25.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
       <ComboBox id="buyStockList" layoutX="80.0" layoutY="485.0" prefWidth="150.0" />
       <Text layoutX="26.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="stock" />
-      <TextArea id="StockTextArea" layoutX="394.0" layoutY="454.0" prefHeight="138.0" prefWidth="359.0" />
+      <TextArea id="StockTextArea" fx:id="portfolioTextArea" layoutX="394.0" layoutY="454.0" prefHeight="138.0" prefWidth="359.0" />
       <Text layoutX="193.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="amount" />
       <TextField id="buyAmount" layoutX="239.0" layoutY="448.0" prefHeight="25.0" prefWidth="79.0" />
       <Text layoutX="26.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="stock" />
@@ -61,7 +60,10 @@
       <TextField id="sellAmount" layoutX="239.0" layoutY="523.0" prefHeight="25.0" prefWidth="79.0" />
       <ComboBox id="sellStockList" layoutX="80.0" layoutY="557.0" prefWidth="150.0" />
       <Button id="sellButton" layoutX="239.0" layoutY="557.0" mnemonicParsing="false" text="sell" />
-      <Button layoutX="702.0" layoutY="1.0" mnemonicParsing="false" text="clear graph" onMousePressed="#clearGraph"/>
+      <TextField id="buyDate" fx:id="addportfoliotname" layoutX="114.0" layoutY="416.0" prefHeight="25.0" prefWidth="100.0" />
+      <Text layoutX="27.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Portfolio" />
+      <Button id="buyButton" fx:id="addportfoliobtn" layoutX="221.0" layoutY="416.0" mnemonicParsing="false" text="add" />
+      <ComboBox fx:id="portfoliobox" layoutX="300.0" layoutY="416.0" prefHeight="25.0" prefWidth="132.0" promptText="portfolio" />
 
     </children>
 </AnchorPane>

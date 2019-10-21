@@ -15,27 +15,45 @@ import java.io.IOException;
 import java.util.ArrayList;
 import com.sun.media.sound.InvalidFormatException;
 
+import javax.swing.*;
+
+import static java.awt.SystemColor.info;
+
 
 public class ViewSceneController {
     @FXML
-    private TextArea tArea,StockTextArea;
+    private TextArea tArea;
     @FXML
     private Button doQuery,buyButton,sellButton;
     @FXML
-    private ComboBox<String> buyStockList,sellStockList;
+    private ComboBox<String> buySockList,sellStockList;
+   /// @FXML
+ //   private ComboBox<String> dataSeries;
     @FXML
-    private ComboBox<String> timeSeries,dataSeries,symbol,symbol2,timeInterval,size,API_KEY;
+    private ComboBox<String> timeSeries,dataSeries;
+    @FXML
+    private ComboBox<String> symbol;
+    @FXML
+    private ComboBox<String> symbol2;
+    @FXML
+    private ComboBox<String> timeInterval;
+    @FXML
+    private ComboBox<String> size;
+    @FXML
+    private ComboBox<String> API_KEY;
     @FXML
     private LineChart<Number,Number> graph;
     @FXML
-    private TextField startDate;
-    @FXML
-    private TextField stopDate;
+    private TextField startDate,stopDate;
     @FXML
     private TextField pearson;
-
+    @FXML
+    private ComboBox portfoliobox;
+    @FXML TextField buyAmount,sellAmount;
 
     private XYChart.Series<Number,Number> series = new XYChart.Series<>();
+    private XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
+
 
     ObservableList<String> apiKey = FXCollections.observableArrayList();
     ObservableList<String> dList = FXCollections.observableArrayList();
@@ -44,9 +62,6 @@ public class ViewSceneController {
     ObservableList<String> symbol2List = FXCollections.observableArrayList();
     ObservableList<String> tiList = FXCollections.observableArrayList();
     ObservableList<String> sizeList = FXCollections.observableArrayList();
-    ObservableList<String> bStockList = FXCollections.observableArrayList();
-    ObservableList<String> sStockList = FXCollections.observableArrayList();
-
 
 
     private void fillLists()throws IOException{
@@ -66,8 +81,6 @@ public class ViewSceneController {
         String[] sInfo = sString.split(",");
         symbolList.addAll(sInfo);
         symbol2List.addAll(sInfo);
-        bStockList.addAll(sInfo);
-
 
         String tiString = ini.get("controllInfo","TIME_INTERVAL");
         String[] tiInfo = tiString.split(",");
@@ -80,7 +93,6 @@ public class ViewSceneController {
 
     public void initialize()throws IOException {
         fillLists();
-
         API_KEY.setItems(apiKey);
         dataSeries.setItems(dList);
         timeSeries.setItems(tsList);
@@ -88,18 +100,12 @@ public class ViewSceneController {
         symbol2.setItems(symbol2List);
         timeInterval.setItems(tiList);
         size.setItems(sizeList);
-        buyStockList.setItems(bStockList);
     }
-
-
-
-
-
 
 
     @FXML
     protected void handleQueryAction(ActionEvent event) throws InvalidFormatException{
-        tArea.clear();
+        //tArea.clear();
         URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(),timeSeries.getValue(),
                 symbol.getValue(),symbol2.getValue(),timeInterval.getValue() ,size.getValue(),API_KEY.getValue());
 
@@ -118,10 +124,20 @@ public class ViewSceneController {
             setGraph(g.getSeries2(),symbol2.getValue());
 
         }
+
         PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
 
         pearson.setText(String.valueOf(p.calculate()));
 
+    }
+    @FXML
+    private void AddPortfolio(ActionEvent event)throws InvalidFormatException{
+        Portfolios portfolios = new Portfolios(portfoliobox.getValue().toString());
+        portfolios.addStocks(buySockList.getValue(),Integer.parseInt(buyAmount.toString()));
+    }
+    @FXML private void handlePortfolioActin(ActionEvent event){
+
+bv 1
     }
     @FXML
     private void handleTimeSeriesAction(ActionEvent event){
@@ -169,14 +185,8 @@ public class ViewSceneController {
         }
     }
 
-    private void setGraph(XYChart.Series<Number,Number> data,String s) {
+    public void setGraph(XYChart.Series<Number,Number> data,String s) {
         this.series.setName(s);
         this.graph.getData().add(data);
     }
-    public void clearGraph(){
-        series.getData().clear();
-        graph.getData().clear();
-        System.out.println();
-        }
-
 }

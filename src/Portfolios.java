@@ -1,31 +1,31 @@
+import javafx.fxml.FXML;
+
+import java.awt.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Portfolios {
-    private ArrayList<Object> protfolios;
-    private ArrayList<Object> portfolioItems;
-    private Portfolios() {
+    private String name;
+    private double totalSpent = 0;
+    private double currentValue = 0;
+    @FXML
+    private TextArea portfolioTextArea;
+
+    private ArrayList<Stocks> stocks;
+
+    public Portfolios(String name) {
+        this.name = name;
     }
-    private void addStock(String symbol, int amount){
+    public void addStocks(String name,int amount){
+        stocks.add(new Stocks(name,amount));
 
     }
-
-    private void buyStocks(String symbol,int amount){
-
-    }
-    private void sellStocks(String symbol,int amount){
-    }
-
-    public HashMap<String, Number> getStocks() {
-        return stocks;
-    }
-
-    private float portfoliobalance(){
-
-
-        return 0;
+    public void fillTArea() {
+        for (Stocks s:stocks){
+            portfolioTextArea.append(s.info());
+        }
     }
 
-
-
+    public double getTotalSpent() {
+        return totalSpent;
+    }
 }
