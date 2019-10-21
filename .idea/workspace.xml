@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b957241-1b79-417d-9b9f-9190aa525bd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/portofolioItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/AddPortfolios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/AddPortfolios.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolios.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/StockAnalyzer.ini" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/StockAnalyzer.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddPortfolios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddPortfolios.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Portfolios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Portfolios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockAnalyzer.ini" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockAnalyzer.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ViewSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewSceneController.java" afterDir="false" />
     </list>
@@ -24,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Singleton" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -33,7 +39,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Pj7OTN5hPJOwdCabzzAdccOeDl" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -106,6 +114,13 @@
       <workItem from="1566468740588" duration="769000" />
       <workItem from="1566491278695" duration="14951000" />
       <workItem from="1568198506604" duration="5848000" />
+      <workItem from="1568368868338" duration="2309000" />
+      <workItem from="1568745950523" duration="2922000" />
+      <workItem from="1569413658360" duration="1220000" />
+      <workItem from="1569588501255" duration="881000" />
+      <workItem from="1570630399439" duration="845000" />
+      <workItem from="1571126270201" duration="756000" />
+      <workItem from="1571667041906" duration="429000" />
     </task>
     <task id="LOCAL-00001" summary="~">
       <created>1566375690417</created>

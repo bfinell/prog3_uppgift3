@@ -61,6 +61,7 @@
       <TextField id="sellAmount" layoutX="239.0" layoutY="523.0" prefHeight="25.0" prefWidth="79.0" />
       <ComboBox id="sellStockList" layoutX="80.0" layoutY="557.0" prefWidth="150.0" />
       <Button id="sellButton" layoutX="239.0" layoutY="557.0" mnemonicParsing="false" text="sell" />
+      <Button layoutX="702.0" layoutY="1.0" mnemonicParsing="false" text="clear graph" onMousePressed="#clearGraph"/>
 
     </children>
 </AnchorPane>
