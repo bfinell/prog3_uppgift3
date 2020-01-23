@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6b957241-1b79-417d-9b9f-9190aa525bd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/AddStocks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolios.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PearsonCorrelation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PearsonCorrelation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewSceneController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,9 +26,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Pj7OTN5hPJOwdCabzzAdccOeDl" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -110,8 +102,7 @@
       <workItem from="1568467191452" duration="1342000" />
       <workItem from="1570443600379" duration="6783000" />
       <workItem from="1571308900020" duration="603000" />
-      <workItem from="1579528521209" duration="1811000" />
-      <workItem from="1579776530160" duration="571000" />
+      <workItem from="1579717462299" duration="607000" />
     </task>
     <task id="LOCAL-00001" summary="~">
       <created>1566375690417</created>
