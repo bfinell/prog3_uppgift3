@@ -137,7 +137,6 @@ public class ViewSceneController {
     }
     @FXML private void handlePortfolioActin(ActionEvent event){
 
-bv 1
     }
     @FXML
     private void handleTimeSeriesAction(ActionEvent event){

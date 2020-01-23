@@ -3,7 +3,7 @@ import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import java.util.ArrayList;
 
 public class PearsonCorrelation {
-    private ArrayList <String> open1,open2 = new ArrayList<>();
+    private ArrayList <String> open1,open2;
     public PearsonCorrelation(ArrayList open1,ArrayList open2){
     this.open1=open1;
     this.open2=open2;
