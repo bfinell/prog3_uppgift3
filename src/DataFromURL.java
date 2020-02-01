@@ -31,7 +31,6 @@ public class DataFromURL {
     private void getData(){
 
         try {
-            System.out.println("yyeeetus");
             System.out.println(URL1);
             URL url = new URL(URL1);
             URLConnection request = url.openConnection();
@@ -61,8 +60,8 @@ public class DataFromURL {
 
         }catch (IOException | NullPointerException e){
 
-        }
 
+        }
         if ((URL2!=null)){
             System.out.println(URL2);
             try{

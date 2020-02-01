@@ -3,22 +3,23 @@ public class Stocks {
     private String symbol;
     private double unitPrice;
 
-    public Stocks(String symbol, double amount){
-        this.symbol=symbol;
-        this.amount=amount;
+    public Stocks(String symbol,String date, int amount, double value){
+
+    }
+
+    public void buyStocks(String date, String symbol, int amount){
+
     }
 
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
+
+
+
     public String info(){
         return symbol+" "+amount+" "+unitPrice+" Total value "+amount*unitPrice;
     }
-    public double getAmount() {
-        return amount;
-    }
-    public double getUnitPrice() { return unitPrice; }
-    public String getSymbol() {
-        return symbol;
-    }
+
+
 }

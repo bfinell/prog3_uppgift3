@@ -15,9 +15,13 @@ public class URLBuilder {
         this.interval=interval;
         this.size=size;
         this.apiKey = apiKey;
-     /*   this.start = start;
-        this.end = end;
-*/
+
+        buildURL();
+    }public URLBuilder(String symbol,String interval, String apiKey){
+        this.symbol=symbol;
+        this.apiKey = apiKey;
+        this.interval=interval;
+        this.tSeries="TIME_SERIES_INTRADAY";
         buildURL();
     }
 

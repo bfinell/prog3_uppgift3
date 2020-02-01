@@ -6,8 +6,11 @@ import javafx.scene.chart.NumberAxis;
 import java.util.ArrayList;
 
 public class Graph {
+
     @FXML
-    private LineChart<Number,Number> graph;
+    private LineChart<Number,Number> stock_Graph;
+
+
     private String symbol1,symbol2;
     private ArrayList price1,price2,date1,date2;
     private int start,stop;
@@ -24,11 +27,13 @@ public class Graph {
     this.start=start;
     this.stop=stop;
     }
+    public Graph(){
 
+    }
     public void setGraph(){
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
-        graph = new LineChart<Number, Number>(xAxis,yAxis);
+        stock_Graph = new LineChart<Number, Number>(xAxis,yAxis);
 
         this.series = new XYChart.Series<>();
 
@@ -37,7 +42,7 @@ public class Graph {
 
         series.setName(symbol1);
         //System.out.println("graph test"+symbol1+" aa "+date1.size());
-        this.graph.getData().add(series);
+        this.stock_Graph.getData().add(series);
         for (int i = 1; i < date1.size() - 2; i++) {
             int temp = Integer.parseInt(date1.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));
             if (temp >= start && temp <= stop) {
@@ -51,7 +56,7 @@ public class Graph {
         if (!price2.isEmpty()) {
             this.series2 = new XYChart.Series<>();
             series2.setName(symbol2);
-            this.graph.getData().add(series2);
+            this.stock_Graph.getData().add(series2);
             for (int i = 1; i < date2.size() - 2; i++) {
                 int temp = Integer.parseInt(date2.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));
                 if (temp >= start && temp <= stop) {
@@ -64,7 +69,9 @@ public class Graph {
             }
         }
         //return series;
-
+    }
+    public void clear()throws NullPointerException{
+        series.getData().clear();
     }
     public XYChart.Series getSeries(){
         return series;
@@ -73,3 +80,4 @@ public class Graph {
         return series2;
    }
 }
+

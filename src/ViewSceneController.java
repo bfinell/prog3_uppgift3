@@ -12,29 +12,22 @@ import javafx.scene.control.TextField;
 import org.ini4j.*;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import com.sun.media.sound.InvalidFormatException;
-
-import javax.swing.*;
-
-import static java.awt.SystemColor.info;
 
 
 public class ViewSceneController {
     @FXML
     private TextArea tArea;
     @FXML
-    private Button doQuery,buyButton,sellButton;
-    @FXML
-    private ComboBox<String> buySockList,sellStockList;
+    private Button doQuery,buyButton,sellButton,ClearButton;
    /// @FXML
  //   private ComboBox<String> dataSeries;
     @FXML
     private ComboBox<String> timeSeries,dataSeries;
     @FXML
-    private ComboBox<String> symbol;
-    @FXML
-    private ComboBox<String> symbol2;
+    private ComboBox<String> symbol,symbol2,buySockList,sellStockList;
     @FXML
     private ComboBox<String> timeInterval;
     @FXML
@@ -44,12 +37,12 @@ public class ViewSceneController {
     @FXML
     private LineChart<Number,Number> graph;
     @FXML
-    private TextField startDate,stopDate;
+    private TextField startDate,stopDate,buyDate,sellDate,buyAmount,sellAmount;
     @FXML
     private TextField pearson;
     @FXML
     private ComboBox portfoliobox;
-    @FXML TextField buyAmount,sellAmount;
+
 
     private XYChart.Series<Number,Number> series = new XYChart.Series<>();
     private XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
@@ -59,7 +52,7 @@ public class ViewSceneController {
     ObservableList<String> dList = FXCollections.observableArrayList();
     ObservableList<String> tsList = FXCollections.observableArrayList();
     ObservableList<String> symbolList = FXCollections.observableArrayList();
-    ObservableList<String> symbol2List = FXCollections.observableArrayList();
+    ObservableList<String> pSymbol2List = FXCollections.observableArrayList();
     ObservableList<String> tiList = FXCollections.observableArrayList();
     ObservableList<String> sizeList = FXCollections.observableArrayList();
 
@@ -80,7 +73,6 @@ public class ViewSceneController {
         String sString = ini.get("controllInfo","SYMBOL");
         String[] sInfo = sString.split(",");
         symbolList.addAll(sInfo);
-        symbol2List.addAll(sInfo);
 
         String tiString = ini.get("controllInfo","TIME_INTERVAL");
         String[] tiInfo = tiString.split(",");
@@ -97,7 +89,8 @@ public class ViewSceneController {
         dataSeries.setItems(dList);
         timeSeries.setItems(tsList);
         symbol.setItems(symbolList);
-        symbol2.setItems(symbol2List);
+        symbol2.setItems(symbolList);
+        buySockList.setItems(symbolList);
         timeInterval.setItems(tiList);
         size.setItems(sizeList);
     }
@@ -105,25 +98,29 @@ public class ViewSceneController {
 
     @FXML
     protected void handleQueryAction(ActionEvent event) throws InvalidFormatException{
+
         //tArea.clear();
-        URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(),timeSeries.getValue(),
-                symbol.getValue(),symbol2.getValue(),timeInterval.getValue() ,size.getValue(),API_KEY.getValue());
 
-        DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),urlBuilder.getFinalURL2(),
-                startDate.getText(),stopDate.getText(),dataSeries.getValue());
 
-        setData(dataFromURL.getKeyset(),dataFromURL.getOpen(),dataFromURL.getOpen2(),
-                    dataFromURL.getStart(),dataFromURL.getStop());
+               URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(), timeSeries.getValue(),
+                       symbol.getValue(), symbol2.getValue(), timeInterval.getValue(), size.getValue(), API_KEY.getValue());
 
-        Graph g = new Graph(symbol.getValue(),dataFromURL.getOpen(),dataFromURL.getKeyset(),symbol2.getValue(),
-                dataFromURL.getOpen2(),dataFromURL.getKeyset2(),dataFromURL.getStart(),dataFromURL.getStop());
-        g.setGraph();
-        setGraph(g.getSeries(),symbol.getValue());
-        if (symbol2.getValue()!=""){
-        System.out.println("got through if statment");
-            setGraph(g.getSeries2(),symbol2.getValue());
 
-        }
+               DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(), urlBuilder.getFinalURL2(),
+                       startDate.getText(), stopDate.getText(), dataSeries.getValue());
+
+               setData(dataFromURL.getKeyset(), dataFromURL.getOpen(), dataFromURL.getOpen2(),
+                       dataFromURL.getStart(), dataFromURL.getStop());
+
+               Graph g = new Graph(symbol.getValue(), dataFromURL.getOpen(), dataFromURL.getKeyset(), symbol2.getValue(),
+                       dataFromURL.getOpen2(), dataFromURL.getKeyset2(), dataFromURL.getStart(), dataFromURL.getStop());
+
+               g.setGraph();
+               setGraph(g.getSeries(), symbol.getValue());
+               if (symbol2.getValue() != "") {
+                   setGraph(g.getSeries2(), symbol2.getValue());
+
+               }
 
         PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
 
@@ -132,10 +129,18 @@ public class ViewSceneController {
     }
     @FXML
     private void AddPortfolio(ActionEvent event)throws InvalidFormatException{
-        Portfolios portfolios = new Portfolios(portfoliobox.getValue().toString());
-        portfolios.addStocks(buySockList.getValue(),Integer.parseInt(buyAmount.toString()));
+        Portfolio portfolio = new Portfolio(portfoliobox.getValue().toString());
     }
     @FXML private void handlePortfolioActin(ActionEvent event){
+
+    }
+    @FXML
+    private void handleBuyStock(ActionEvent event){
+        URLBuilder urlBuilder = new URLBuilder(buySockList.getValue(),buyDate.getText(),API_KEY.getValue());
+
+        DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),urlBuilder.getFinalURL2(),
+                startDate.getText(),stopDate.getText(),dataSeries.getValue());
+        Stocks stocks = new Stocks(buySockList.getValue(),buyDate.getText(),Integer.parseInt(buyAmount.getText()),Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")));
 
     }
     @FXML
@@ -187,5 +192,10 @@ public class ViewSceneController {
     public void setGraph(XYChart.Series<Number,Number> data,String s) {
         this.series.setName(s);
         this.graph.getData().add(data);
+    }
+
+    public void handleClearButton(ActionEvent event) {
+     tArea.clear();
+     graph.getData().clear();
     }
 }
