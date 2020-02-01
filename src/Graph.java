@@ -27,7 +27,9 @@ public class Graph {
     this.start=start;
     this.stop=stop;
     }
+    public Graph(){
 
+    }
     public void setGraph(){
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
@@ -68,6 +70,9 @@ public class Graph {
         }
         //return series;
     }
+    public void clear()throws NullPointerException{
+        series.getData().clear();
+    }
     public XYChart.Series getSeries(){
         return series;
     }
@@ -75,3 +80,4 @@ public class Graph {
         return series2;
    }
 }
+
