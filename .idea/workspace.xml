@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6b957241-1b79-417d-9b9f-9190aa525bd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/AddPortfolios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/AddPortfolios.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/DataFromURL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/DataFromURL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/PearsonCorrelation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/PearsonCorrelation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddPortfolios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddPortfolios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFromURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFromURL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Portfolios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Portfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/URLBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/URLBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/portofolioItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/URLBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/URLBuilder.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +101,7 @@
       <workItem from="1579717462299" duration="607000" />
       <workItem from="1579812868147" duration="608000" />
       <workItem from="1580130960941" duration="7962000" />
-      <workItem from="1580297333465" duration="9543000" />
+      <workItem from="1580297333465" duration="9699000" />
     </task>
     <task id="LOCAL-00001" summary="~">
       <created>1566375690417</created>
@@ -142,7 +129,14 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1568204394485</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="....">
+      <created>1580576094269</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1580576094269</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +172,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1580303418872" />
+    <state x="152" y="0" key="CommitChangelistDialog2" timestamp="1580576093222">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="152" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1580576093222" />
     <state width="1237" height="135" key="GridCell.Tab.0.bottom" timestamp="1580309551528">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -194,10 +192,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="135" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580309551528" />
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2" timestamp="1580576101668">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="75" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1580576101668" />
     <state x="336" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1580297336037">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="336" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1580297336037" />
+    <state x="355" y="133" key="git4idea.merge.GitPullDialog" timestamp="1580719608916">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="355" y="133" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1580719608916" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1580306162617">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
