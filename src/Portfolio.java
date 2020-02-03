@@ -16,8 +16,8 @@ public class Portfolio {
     public Portfolio(String name) {
         this.name = name;
     }
-    public void addStocks(String name,int amount){
-
+    public void addStocks(String symbol,String date,int amount, double stockValue){
+                stocks.add(new Stocks(date,symbol,amount,stockValue));
     }
     public void fillTArea() {
         for (Stocks s:stocks){
@@ -26,7 +26,14 @@ public class Portfolio {
     }
     public void addPortfolio(Object p){
 
-        portfolios.add(p);
+        portfolios.add((p));
+    }
+    public double buySell(){
+
+    }
+
+    public String getName() {
+        return name;
     }
 
     public ArrayList<Object> getPortfolios() {
