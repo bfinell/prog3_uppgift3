@@ -1,24 +1,21 @@
 public class Stocks {
     private double amount;
+    private double stockValue;
     private String symbol;
-    private double unitPrice;
+    private String date;
+    private double totValue;
 
-    public Stocks(String symbol,String date, int amount, double value){
+    public Stocks(String symbol,String date, int amount, double stockValue) {
+        this.symbol = symbol;
+        this.date = date;
+        this.amount = amount;
+        this.stockValue = stockValue;
+        this.totValue = stockValue*amount;
 
     }
-
-    public void buyStocks(String date, String symbol, int amount){
-
-    }
-
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-
 
     public String info(){
-        return symbol+" "+amount+" "+unitPrice+" Total value "+amount*unitPrice;
+        return symbol+" "+amount+" "+stockValue+" Total value "+totValue;
     }
 
 
