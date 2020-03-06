@@ -43,6 +43,7 @@ public class Graph {
         series.setName(symbol1);
         //System.out.println("graph test"+symbol1+" aa "+date1.size());
         this.stock_Graph.getData().add(series);
+        stock_Graph.setCreateSymbols(false);
         for (int i = 1; i < date1.size() - 2; i++) {
             int temp = Integer.parseInt(date1.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));
             if (temp >= start && temp <= stop) {
@@ -68,7 +69,7 @@ public class Graph {
                 }
             }
         }
-        //return series;
+
     }
     public void clear()throws NullPointerException{
         series.getData().clear();

@@ -13,6 +13,17 @@ public class Stocks {
         this.totValue = stockValue*amount;
 
     }
+    public void changeAmount(double newAmount){
+        this.amount = amount-newAmount;
+
+    }
+    public double getTotValue() {
+        return totValue;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
 
     public String info(){
         return symbol+" "+amount+" "+stockValue+" Total value "+totValue;

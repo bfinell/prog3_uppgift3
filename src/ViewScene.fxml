@@ -32,7 +32,7 @@
         <Label layoutX="25.0" layoutY="241.0" prefHeight="26.0" prefWidth="100.0" text="Output Size" />
         <Label layoutX="25.0" layoutY="36.0" prefHeight="26.0" prefWidth="100.0" text="Data Series" />
         <Button fx:id="doQuery" layoutX="139.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleQueryAction" text="---- Do query ----" />
-        <LineChart fx:id="graph" layoutX="351.0" layoutY="7.0" prefHeight="265.0" prefWidth="394.0">
+        <LineChart fx:id="graph" layoutX="351.0" layoutY="7.0" prefHeight="265.0" prefWidth="394.0" createSymbols="false">
             <xAxis>
                 <CategoryAxis side="BOTTOM" />
             </xAxis>
@@ -62,7 +62,7 @@
       <Button id="sellButton" layoutX="239.0" layoutY="557.0" mnemonicParsing="false" text="sell" />
       <TextField id="buyDate" fx:id="addportfoliotname" layoutX="114.0" layoutY="416.0" prefHeight="25.0" prefWidth="100.0" />
       <Text layoutX="27.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Portfolio" />
-      <Button id="buyButton" fx:id="buyButton" onAction="#handleBuyStock" layoutX="221.0" layoutY="416.0" mnemonicParsing="false" text="add" />
+      <Button id="buyButton" fx:id="buyButton"  layoutX="221.0" layoutY="416.0" mnemonicParsing="false" text="add" />
       <ComboBox fx:id="portfoliobox" layoutX="300.0" layoutY="416.0" prefHeight="25.0" prefWidth="132.0" promptText="portfolio" />
       <Button fx:id="ClearButton" onAction="#handleClearButton" layoutX="340.0" layoutY="271.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="52.0" text="CLEAR" />
 
