@@ -28,6 +28,14 @@ public class DataFromURL {
      this.stop=stop;
      getData();
     }
+    public DataFromURL(String URL1,String start,String stop,String dSeries){
+        this.URL1= URL1;
+        this.dSeries=dSeries;
+        this.start=start;
+        this.stop=stop;
+        getData();
+    }
+
     private void getData(){
 
         try {
@@ -36,10 +44,11 @@ public class DataFromURL {
             URLConnection request = url.openConnection();
             request.connect();
 
+
             JsonParser jp = new JsonParser();
             JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent())); //Convert the input stream to a json element
             JsonObject obj = root.getAsJsonObject();
-
+            System.out.println(obj);
             String[] tempObjPart = obj.keySet().toString().split(",");
             String tempObj = tempObjPart[1].replace("]","").substring(1);
             System.out.println(tempObj);

@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import org.ini4j.*;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import com.sun.media.sound.InvalidFormatException;
 
@@ -22,8 +21,6 @@ public class ViewSceneController {
     private TextArea tArea;
     @FXML
     private Button doQuery,buyButton,sellButton,ClearButton;
-   /// @FXML
- //   private ComboBox<String> dataSeries;
     @FXML
     private ComboBox<String> timeSeries,dataSeries;
     @FXML
@@ -90,7 +87,7 @@ public class ViewSceneController {
         timeSeries.setItems(tsList);
         symbol.setItems(symbolList);
         symbol2.setItems(symbolList);
-        buySockList.setItems(symbolList);
+     //   buySockList.setItems(symbolList);
         timeInterval.setItems(tiList);
         size.setItems(sizeList);
     }
@@ -127,22 +124,29 @@ public class ViewSceneController {
         pearson.setText(String.valueOf(p.calculate()));
 
     }
-    @FXML
+
+  /*  @FXML
     private void AddPortfolio(ActionEvent event)throws InvalidFormatException{
         Portfolio portfolio = new Portfolio(portfoliobox.getValue().toString());
-    }
-    @FXML private void handlePortfolioActin(ActionEvent event){
 
     }
+
     @FXML
     private void handleBuyStock(ActionEvent event){
         URLBuilder urlBuilder = new URLBuilder(buySockList.getValue(),buyDate.getText(),API_KEY.getValue());
-
-        DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),urlBuilder.getFinalURL2(),
+        DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
                 startDate.getText(),stopDate.getText(),dataSeries.getValue());
         Stocks stocks = new Stocks(buySockList.getValue(),buyDate.getText(),Integer.parseInt(buyAmount.getText()),Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")));
+    }*/
+  /*  @FXML
+    private void handleSellStock(ActionEvent event) {
+        URLBuilder urlBuilder = new URLBuilder(sellStockList.getValue(), sellDate.getText(), API_KEY.getValue());
+        DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
+                startDate.getText(), stopDate.getText(), dataSeries.getValue());
+        Stocks stocks = new Stocks(sellStockList.getValue(), sellDate.getText(), Integer.parseInt(sellAmount.getText()), Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")));
+        portfolio.Sell(sellStockList.getValue(),Integer.parseInt(sellAmount.getText()),Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")))
 
-    }
+    }*/
     @FXML
     private void handleTimeSeriesAction(ActionEvent event){
         timeInterval.setDisable(false);
