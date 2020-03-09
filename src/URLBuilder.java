@@ -20,7 +20,7 @@ public class URLBuilder {
     }public URLBuilder(String symbol,String interval, String apiKey){
         this.symbol=symbol;
         this.apiKey = apiKey;
-        this.interval=interval;
+        this.interval="60min";
         this.tSeries="TIME_SERIES_INTRADAY";
         buildURL();
     }
