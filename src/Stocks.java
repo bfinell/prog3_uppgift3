@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Stocks {
     private double amount;
     private double stockValue;
@@ -14,11 +16,14 @@ public class Stocks {
 
     }
     public void changeAmount(double newAmount){
+
         this.amount = amount-newAmount;
 
     }
     public double getTotValue() {
+
         return totValue;
+
     }
 
     public String getSymbol() {
@@ -26,7 +31,7 @@ public class Stocks {
     }
 
     public String info(){
-        return symbol+" "+amount+" "+stockValue+" Total value "+totValue;
+        return symbol+" amount: "+amount+" price "+stockValue+" Total value "+totValue +"\n";
     }
 
 

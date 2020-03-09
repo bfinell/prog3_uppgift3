@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.ini4j.*;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,33 +19,21 @@ import com.sun.media.sound.InvalidFormatException;
 
 public class ViewSceneController {
     @FXML
-    private TextArea tArea;
+    private TextArea tArea,portfolioTextArea;
     @FXML
-    private Button doQuery,buyButton,sellButton,ClearButton;
+    private Button doQuery,buyButton,sellButton,ClearButton,addPortfoliobtn;
     @FXML
-    private ComboBox<String> timeSeries,dataSeries;
-    @FXML
-    private ComboBox<String> symbol,symbol2,buySockList,sellStockList;
-    @FXML
-    private ComboBox<String> timeInterval;
-    @FXML
-    private ComboBox<String> size;
-    @FXML
-    private ComboBox<String> API_KEY;
+    private ComboBox<String> symbol,symbol2, buyStockList,sellStockList,size,API_KEY,timeInterval,timeSeries,dataSeries,portfoliobox;
     @FXML
     private LineChart<Number,Number> graph;
     @FXML
-    private TextField startDate,stopDate,buyDate,sellDate,buyAmount,sellAmount;
-    @FXML
-    private TextField pearson;
-    @FXML
-    private ComboBox portfoliobox;
-
+    private TextField startDate,stopDate,buyDate,sellDate,buyAmount,sellAmount,addportfoliotname,pearson,totalAmountBox;
 
     private XYChart.Series<Number,Number> series = new XYChart.Series<>();
     private XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
+    private ArrayList<Portfolio> portfolios = new ArrayList<>();
 
-
+    ObservableList<String> portfolioName = FXCollections.observableArrayList();
     ObservableList<String> apiKey = FXCollections.observableArrayList();
     ObservableList<String> dList = FXCollections.observableArrayList();
     ObservableList<String> tsList = FXCollections.observableArrayList();
@@ -87,7 +76,7 @@ public class ViewSceneController {
         timeSeries.setItems(tsList);
         symbol.setItems(symbolList);
         symbol2.setItems(symbolList);
-     //   buySockList.setItems(symbolList);
+        buyStockList.setItems(symbolList);
         timeInterval.setItems(tiList);
         size.setItems(sizeList);
     }
@@ -125,19 +114,58 @@ public class ViewSceneController {
 
     }
 
-  /*  @FXML
-    private void AddPortfolio(ActionEvent event)throws InvalidFormatException{
-        Portfolio portfolio = new Portfolio(portfoliobox.getValue().toString());
+    @FXML
+    private void handelAddPortfolio(ActionEvent event)throws InvalidFormatException, NullPointerException{
+        Portfolio portfolio = new Portfolio(addportfoliotname.getText());
+        portfolios.add(portfolio);
+        portfolioName.add(portfolio.getName());
+        portfoliobox.setItems(portfolioName);
+        
+    }
+    @FXML
+    private void handleSwapPortfolio(ActionEvent event){
+        int index = 0;
 
+        for (int i = 0; i < portfolios.size(); i++) {
+            if (portfolios.get(i).getName() == portfoliobox.getValue()) {
+                index = i;
+            }
+        }
+        portfolioTextArea.clear();
+        for (int i = 0;i<portfolios.get(index).getStocks().size();i++){
+            portfolioTextArea.appendText(portfolios.get(index).getStocks().get(i).toString());
+        }
+        totalAmountBox.setText(Double.toString(portfolios.get(index).getPortfolioValue()));
     }
 
+
     @FXML
-    private void handleBuyStock(ActionEvent event){
-        URLBuilder urlBuilder = new URLBuilder(buySockList.getValue(),buyDate.getText(),API_KEY.getValue());
+    private void handleBuyStock(ActionEvent event) {
+        int index = 0;
+
+        for (int i = 0; i < portfolios.size(); i++) {
+            if (portfolios.get(i).getName() == portfoliobox.getValue()) {
+                index = i;
+            }
+        }
+        System.out.println(buyStockList.getValue());
+        System.out.println(buyDate.getText());
+
+        URLBuilder urlBuilder = new URLBuilder(buyStockList.getValue(),buyDate.getText(), API_KEY.getValue());
         DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
                 startDate.getText(),stopDate.getText(),dataSeries.getValue());
-        Stocks stocks = new Stocks(buySockList.getValue(),buyDate.getText(),Integer.parseInt(buyAmount.getText()),Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")));
-    }*/
+
+        portfolios.get(index).addStocks(buyStockList.getValue().toString(),buyDate.getText(),
+                Integer.parseInt(buyAmount.getText()),
+                Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")));
+
+        portfolioTextArea.clear();
+        for (int i = 0;i<portfolios.get(index).getStocks().size();i++){
+            portfolioTextArea.appendText(portfolios.get(index).getStocks().get(i).toString());
+        }
+        totalAmountBox.setText(Double.toString(portfolios.get(index).getPortfolioValue()));
+    }
+//https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=2020.01.14&outputsize=null&apikey=ZR69NHOOT7AMCZH8
   /*  @FXML
     private void handleSellStock(ActionEvent event) {
         URLBuilder urlBuilder = new URLBuilder(sellStockList.getValue(), sellDate.getText(), API_KEY.getValue());
@@ -147,6 +175,7 @@ public class ViewSceneController {
         portfolio.Sell(sellStockList.getValue(),Integer.parseInt(sellAmount.getText()),Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")))
 
     }*/
+
     @FXML
     private void handleTimeSeriesAction(ActionEvent event){
         timeInterval.setDisable(false);
