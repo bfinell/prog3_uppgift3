@@ -85,32 +85,54 @@ public class ViewSceneController {
     @FXML
     protected void handleQueryAction(ActionEvent event) throws InvalidFormatException{
 
-        //tArea.clear();
+
+                if (symbol2.getValue().isEmpty()){
+
+                    URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(), timeSeries.getValue(),
+                            symbol.getValue(), timeInterval.getValue(), size.getValue(), API_KEY.getValue());
+                    DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
+                            startDate.getText(), stopDate.getText(), dataSeries.getValue());
+                    setData(dataFromURL.getKeyset(), dataFromURL.getOpen(), dataFromURL.getOpen2(),
+                            dataFromURL.getStart(), dataFromURL.getStop());
+
+                    Graph g = new Graph(symbol.getValue(), dataFromURL.getOpen(), dataFromURL.getKeyset(), symbol2.getValue(),
+                            dataFromURL.getOpen2(), dataFromURL.getKeyset2(), dataFromURL.getStart(), dataFromURL.getStop());
+
+                    g.setGraph();
+                    setGraph(g.getSeries(), symbol.getValue());
+
+                }
+                else{
+
+                    URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(), timeSeries.getValue(),
+                            symbol.getValue(), symbol2.getValue(), timeInterval.getValue(), size.getValue(), API_KEY.getValue());
+
+                    DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(), urlBuilder.getFinalURL2(),
+                            startDate.getText(), stopDate.getText(), dataSeries.getValue());
+
+                    setData(dataFromURL.getKeyset(), dataFromURL.getOpen(), dataFromURL.getOpen2(),
+                            dataFromURL.getStart(), dataFromURL.getStop());
+
+                    Graph g = new Graph(symbol.getValue(), dataFromURL.getOpen(), dataFromURL.getKeyset(), symbol2.getValue(),
+                            dataFromURL.getOpen2(), dataFromURL.getKeyset2(), dataFromURL.getStart(), dataFromURL.getStop());
+
+                    g.setGraph();
+                    setGraph(g.getSeries(), symbol.getValue());
+                    setGraph(g.getSeries2(), symbol2.getValue());
+
+                    PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
+
+                    pearson.setText(String.valueOf(p.calculate()));
+                }
 
 
-               URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(), timeSeries.getValue(),
-                       symbol.getValue(), symbol2.getValue(), timeInterval.getValue(), size.getValue(), API_KEY.getValue());
 
 
-               DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(), urlBuilder.getFinalURL2(),
-                       startDate.getText(), stopDate.getText(), dataSeries.getValue());
 
-               setData(dataFromURL.getKeyset(), dataFromURL.getOpen(), dataFromURL.getOpen2(),
-                       dataFromURL.getStart(), dataFromURL.getStop());
 
-               Graph g = new Graph(symbol.getValue(), dataFromURL.getOpen(), dataFromURL.getKeyset(), symbol2.getValue(),
-                       dataFromURL.getOpen2(), dataFromURL.getKeyset2(), dataFromURL.getStart(), dataFromURL.getStop());
 
-               g.setGraph();
-               setGraph(g.getSeries(), symbol.getValue());
-               if (symbol2.getValue() != "") {
-                   setGraph(g.getSeries2(), symbol2.getValue());
 
-               }
 
-        PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
-
-        pearson.setText(String.valueOf(p.calculate()));
 
     }
 
@@ -148,8 +170,7 @@ public class ViewSceneController {
                 index = i;
             }
         }
-        System.out.println(buyStockList.getValue());
-        System.out.println(buyDate.getText());
+
 
         URLBuilder urlBuilder = new URLBuilder(buyStockList.getValue(),buyDate.getText(), API_KEY.getValue());
         DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
@@ -195,13 +216,11 @@ public class ViewSceneController {
 
     private void setData(ArrayList date, ArrayList price,ArrayList price2,int start, int stop) {
         date.remove(date.size() -1);
-        System.out.println("price "+price.size()+"2 "+price2.size());
-        System.out.println(date.get(2));
         int max = price.size()-1;
         if (max>price2.size()){
             max=price2.size()-1;
         }
-        if (symbol2.getValue() != "") {
+        if (!symbol2.getValue().isEmpty()) {
             for (int i = max-1; i >= 0; i--) {
 
                 int temp = Integer.parseInt(date.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));

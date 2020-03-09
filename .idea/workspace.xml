@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6b957241-1b79-417d-9b9f-9190aa525bd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Portfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/META-INF/prog3_uppg3_Finell_41145.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFromURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFromURL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/URLBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/URLBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ViewSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewSceneController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,22 +192,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="391" y="85" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1583763396214" />
-    <state width="1237" height="115" key="GridCell.Tab.0.bottom" timestamp="1583770371270">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1764" height="293" key="GridCell.Tab.0.bottom" timestamp="1583783283319">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="115" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583770371270" />
-    <state width="1237" height="115" key="GridCell.Tab.0.center" timestamp="1583770371269">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1764" height="293" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583783283319" />
+    <state width="1764" height="293" key="GridCell.Tab.0.center" timestamp="1583783283319">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="115" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583770371269" />
-    <state width="1237" height="115" key="GridCell.Tab.0.left" timestamp="1583770371269">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1764" height="293" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583783283319" />
+    <state width="1764" height="293" key="GridCell.Tab.0.left" timestamp="1583783283319">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="115" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583770371269" />
-    <state width="1237" height="115" key="GridCell.Tab.0.right" timestamp="1583770371269">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1764" height="293" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583783283319" />
+    <state width="1764" height="293" key="GridCell.Tab.0.right" timestamp="1583783283319">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="115" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583770371269" />
+    <state width="1764" height="293" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583783283319" />
     <state x="164" y="29" width="1038" height="629" key="SettingsEditor" timestamp="1583409060573">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
