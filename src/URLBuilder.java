@@ -7,6 +7,7 @@ public class URLBuilder {
     private String size,dSeries,tSeries,interval,apiKey;
     private String finalURL,finalURL2;
 
+    //URLBuilder for 2 ticker
     public URLBuilder(String dSeries,String tSeries, String symbol, String symbol2, String interval, String size, String apiKey){
         this.dSeries=dSeries;
         this.tSeries=tSeries;
@@ -18,7 +19,7 @@ public class URLBuilder {
 
         buildURL();
 
-    }
+    }//URLBuilder for 1 ticker
     public URLBuilder(String dSeries,String tSeries, String symbol, String interval, String size, String apiKey) {
         this.dSeries = dSeries;
         this.tSeries = tSeries;
@@ -29,6 +30,7 @@ public class URLBuilder {
 
         buildURL();
     }
+    //URlBuilder for buying stocks
     public URLBuilder(String symbol,String interval, String apiKey){
         this.symbol=symbol;
         this.apiKey = apiKey;

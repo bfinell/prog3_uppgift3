@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import com.sun.media.sound.InvalidFormatException;
 
 
+
+
 public class ViewSceneController {
     @FXML
     private TextArea tArea,portfolioTextArea;
@@ -43,6 +45,8 @@ public class ViewSceneController {
     ObservableList<String> sizeList = FXCollections.observableArrayList();
 
 
+
+//fill combo boxes from .ini file
     private void fillLists()throws IOException{
         Ini ini = new Ini(new FileReader("./src/StockAnalyzer.ini"));
         String key = ini.get("controllInfo","API_KEY");
@@ -85,13 +89,15 @@ public class ViewSceneController {
     @FXML
     protected void handleQueryAction(ActionEvent event) throws InvalidFormatException{
 
-
-                if (symbol2.getValue().isEmpty()){
-
+                //checks if user wants 1 or 2 tickers
+                if (symbol2.getValue().isEmpty()) {
+                    //builds URL
                     URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(), timeSeries.getValue(),
                             symbol.getValue(), timeInterval.getValue(), size.getValue(), API_KEY.getValue());
+                    //Fetches data from alphavantage
                     DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
                             startDate.getText(), stopDate.getText(), dataSeries.getValue());
+                    //Fills textArea with data
                     setData(dataFromURL.getKeyset(), dataFromURL.getOpen(), dataFromURL.getOpen2(),
                             dataFromURL.getStart(), dataFromURL.getStop());
 
@@ -101,9 +107,10 @@ public class ViewSceneController {
                     g.setGraph();
                     setGraph(g.getSeries(), symbol.getValue());
 
+
                 }
                 else{
-
+                    //If user chooses 2 tickers
                     URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(), timeSeries.getValue(),
                             symbol.getValue(), symbol2.getValue(), timeInterval.getValue(), size.getValue(), API_KEY.getValue());
 
@@ -126,17 +133,9 @@ public class ViewSceneController {
                 }
 
 
-
-
-
-
-
-
-
-
     }
 
-    @FXML
+    @FXML //adds portfolio
     private void handelAddPortfolio(ActionEvent event)throws InvalidFormatException, NullPointerException{
         Portfolio portfolio = new Portfolio(addportfoliotname.getText());
         portfolios.add(portfolio);
@@ -144,7 +143,7 @@ public class ViewSceneController {
         portfoliobox.setItems(portfolioName);
         
     }
-    @FXML
+    @FXML //uppdates stock view to current portfolio
     private void handleSwapPortfolio(ActionEvent event){
         int index = 0;
 
@@ -164,7 +163,7 @@ public class ViewSceneController {
     @FXML
     private void handleBuyStock(ActionEvent event) {
         int index = 0;
-
+        // finds correct portfolio from Arraylist
         for (int i = 0; i < portfolios.size(); i++) {
             if (portfolios.get(i).getName() == portfoliobox.getValue()) {
                 index = i;
@@ -186,7 +185,8 @@ public class ViewSceneController {
         }
         totalAmountBox.setText(Double.toString(portfolios.get(index).getPortfolioValue()));
     }
-//https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=2020.01.14&outputsize=null&apikey=ZR69NHOOT7AMCZH8
+
+    //Will add SellStock for next assignment
   /*  @FXML
     private void handleSellStock(ActionEvent event) {
         URLBuilder urlBuilder = new URLBuilder(sellStockList.getValue(), sellDate.getText(), API_KEY.getValue());
