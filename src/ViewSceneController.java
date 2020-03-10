@@ -120,7 +120,7 @@ public class ViewSceneController {
         portfolios.add(portfolio);
         portfolioName.add(portfolio.getName());
         portfoliobox.setItems(portfolioName);
-        
+            
     }
     @FXML
     private void handleSwapPortfolio(ActionEvent event){

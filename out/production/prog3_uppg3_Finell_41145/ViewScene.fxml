@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="609.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewSceneController">
     <children>
-      <TextField id="buyDate" layoutX="81.0" layoutY="448.0" prefHeight="25.0" prefWidth="100.0" />
+      <TextField id="buyDate" fx:id="buyDate" layoutX="81.0" layoutY="448.0" prefHeight="25.0" prefWidth="100.0" />
         <ComboBox fx:id="dataSeries" layoutX="139.0" layoutY="40.0" onAction="#handleQueryAction" prefWidth="200.0" promptText="1.open" value="1. open" />
         <ComboBox fx:id="timeSeries" layoutX="139.0" layoutY="79.0" onAction="#handleTimeSeriesAction" prefWidth="200.0" promptText="TIME_SERIES_INTRADAY" value="TIME_SERIES_INTRADAY" />
         <ComboBox fx:id="symbol" editable="true" layoutX="139.0" layoutY="118.0" prefWidth="200.0" promptText="MSFT" value="MSFT" />
@@ -22,8 +22,8 @@
         <ComboBox fx:id="size" layoutX="139.0" layoutY="240.0" prefHeight="28.0" prefWidth="200.0" promptText="full" value="full" />
         <TextArea fx:id="tArea" layoutX="394.0" layoutY="266.0" prefHeight="138.0" prefWidth="359.0" />
         <ComboBox fx:id="API_KEY" editable="true" layoutX="139.0" layoutY="7.0" prefWidth="200.0" promptText="demo" value="ZR69NHOOT7AMCZH8" />
-        <TextField fx:id="startDate" layoutX="139.0" layoutY="284.0" text="2019.07.14" />
-        <TextField fx:id="stopDate" layoutX="139.0" layoutY="322.0" text="2019.08.09" />
+        <TextField fx:id="startDate" layoutX="139.0" layoutY="284.0" text="2020.01.14" />
+        <TextField fx:id="stopDate" layoutX="139.0" layoutY="322.0" text="2020.03.09" />
         <TextField fx:id="pearson" layoutX="139.0" layoutY="382.0" />
 
         <Label layoutX="25.0" layoutY="114.0" prefHeight="26.0" prefWidth="100.0" text="Symbol 1" />
@@ -32,7 +32,7 @@
         <Label layoutX="25.0" layoutY="241.0" prefHeight="26.0" prefWidth="100.0" text="Output Size" />
         <Label layoutX="25.0" layoutY="36.0" prefHeight="26.0" prefWidth="100.0" text="Data Series" />
         <Button fx:id="doQuery" layoutX="139.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleQueryAction" text="---- Do query ----" />
-        <LineChart fx:id="graph" layoutX="351.0" layoutY="7.0" prefHeight="265.0" prefWidth="394.0" createSymbols="false">
+        <LineChart fx:id="graph" createSymbols="false" layoutX="351.0" layoutY="7.0" prefHeight="265.0" prefWidth="394.0">
             <xAxis>
                 <CategoryAxis side="BOTTOM" />
             </xAxis>
@@ -40,17 +40,17 @@
                 <NumberAxis side="LEFT" />
             </yAxis>
         </LineChart>
-        <Label layoutX="25.0" layoutY="7.0" prefHeight="26.0" prefWidth="100.0" text="API_KEY" />
 
+        <Label layoutX="25.0" layoutY="7.0" prefHeight="26.0" prefWidth="100.0" text="API_KEY" />
         <Label layoutX="25.0" layoutY="284.0" prefHeight="26.0" prefWidth="100.0" text="Start Date" />
         <Label layoutX="25.0" layoutY="322.0" prefHeight="26.0" prefWidth="100.0" text="Stop Date" />
         <Label layoutX="25.0" layoutY="154.0" prefHeight="26.0" prefWidth="100.0" text="Symbol 2" />
         <Label layoutX="25.0" layoutY="382.0" prefHeight="26.0" prefWidth="110.0" text="Pearson Correlation" />
-      <Button id="buyButton" layoutX="239.0" layoutY="485.0" mnemonicParsing="false" text="buy" />
+      <Button id="buyButton" layoutX="239.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleBuyStock" text="buy" />
       <Text layoutX="25.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
-      <ComboBox id="buyStockList" layoutX="80.0" layoutY="485.0" prefWidth="150.0" />
+      <ComboBox id="buyStockList" fx:id="buyStockList" editable="true" layoutX="80.0" layoutY="485.0" prefWidth="150.0" />
       <Text layoutX="26.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="stock" />
-      <TextArea id="StockTextArea" fx:id="portfolioTextArea" layoutX="394.0" layoutY="454.0" prefHeight="138.0" prefWidth="359.0" />
+      <TextArea id="StockTextArea" fx:id="portfolioTextArea" layoutX="394.0" layoutY="475.0" prefHeight="117.0" prefWidth="359.0" />
       <Text layoutX="193.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="amount" />
       <TextField id="buyAmount" fx:id="buyAmount" layoutX="239.0" layoutY="448.0" prefHeight="25.0" prefWidth="79.0" />
       <Text layoutX="26.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="stock" />
@@ -58,13 +58,15 @@
       <TextField id="sellDate" layoutX="81.0" layoutY="523.0" prefHeight="25.0" prefWidth="100.0" />
       <Text layoutX="193.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="amount" />
       <TextField id="sellAmount" layoutX="239.0" layoutY="523.0" prefHeight="25.0" prefWidth="79.0" />
-      <ComboBox id="sellStockList" layoutX="80.0" layoutY="557.0" prefWidth="150.0" />
+      <ComboBox id="sellStockList" editable="true" layoutX="80.0" layoutY="557.0" prefWidth="150.0" />
       <Button id="sellButton" layoutX="239.0" layoutY="557.0" mnemonicParsing="false" text="sell" />
-      <TextField id="buyDate" fx:id="addportfoliotname" layoutX="114.0" layoutY="416.0" prefHeight="25.0" prefWidth="100.0" />
+      <TextField id="newPortfolio" fx:id="addportfoliotname" layoutX="114.0" layoutY="416.0" prefHeight="25.0" prefWidth="100.0" />
       <Text layoutX="27.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Portfolio" />
-      <Button id="buyButton" fx:id="buyButton"  layoutX="221.0" layoutY="416.0" mnemonicParsing="false" text="add" />
-      <ComboBox fx:id="portfoliobox" layoutX="300.0" layoutY="416.0" prefHeight="25.0" prefWidth="132.0" promptText="portfolio" />
-      <Button fx:id="ClearButton" onAction="#handleClearButton" layoutX="340.0" layoutY="271.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="52.0" text="CLEAR" />
+      <Button id="addPortfoliobtn" fx:id="addPortfoliobtn" layoutX="221.0" layoutY="416.0" mnemonicParsing="false" onAction="#handelAddPortfolio" text="add" />
+      <ComboBox id="portfolioBox " fx:id="portfoliobox" layoutX="300.0" layoutY="416.0" onAction="#handleSwapPortfolio" prefHeight="25.0" prefWidth="132.0" />
+      <Button fx:id="ClearButton" layoutX="340.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleClearButton" prefHeight="127.0" prefWidth="52.0" text="CLEAR" />
+      <Text layoutX="518.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total portfolio value" wrappingWidth="110.00001901388168" />
+      <TextField id="totalAmountBox" fx:id="totalAmountBox" editable="false" layoutX="635.0" layoutY="448.0" prefHeight="25.0" prefWidth="110.0" />
 
     </children>
 </AnchorPane>

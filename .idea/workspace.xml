@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6b957241-1b79-417d-9b9f-9190aa525bd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Portfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/URLBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/URLBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Stocks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Stocks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/URLBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/URLBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ViewSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewSceneController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +110,7 @@
       <workItem from="1582114506627" duration="5000" />
       <workItem from="1582547740359" duration="712000" />
       <workItem from="1583408232313" duration="5199000" />
-      <workItem from="1583742897205" duration="19310000" />
+      <workItem from="1583742897205" duration="21409000" />
     </task>
     <task id="LOCAL-00001" summary="~">
       <created>1566375690417</created>
@@ -144,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583518866382</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added buy function for stocks">
+      <created>1583780895020</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583780895021</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +177,8 @@
     <MESSAGE value="fixed a few bugs" />
     <MESSAGE value="graph working. also added frontend for portofolio" />
     <MESSAGE value="...." />
-    <option name="LAST_COMMIT_MESSAGE" value="...." />
+    <MESSAGE value="Added buy function for stocks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added buy function for stocks" />
   </component>
   <component name="WindowStateProjectService">
     <state x="321" y="70" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582101146274">
@@ -184,38 +193,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1580303418872" />
-    <state x="159" y="0" key="CommitChangelistDialog2" timestamp="1583518863762">
+    <state x="159" y="0" key="CommitChangelistDialog2" timestamp="1583780894063">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="159" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1583518863762" />
+    <state x="159" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1583780894063" />
     <state x="391" y="85" key="FileChooserDialogImpl" timestamp="1583763396214">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="391" y="85" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1583763396214" />
-    <state width="1237" height="115" key="GridCell.Tab.0.bottom" timestamp="1583770371270">
+    <state width="1237" height="115" key="GridCell.Tab.0.bottom" timestamp="1583846194157">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="115" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583770371270" />
-    <state width="1237" height="115" key="GridCell.Tab.0.center" timestamp="1583770371269">
+    <state width="1237" height="115" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583846194157" />
+    <state width="1237" height="115" key="GridCell.Tab.0.center" timestamp="1583846194156">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="115" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583770371269" />
-    <state width="1237" height="115" key="GridCell.Tab.0.left" timestamp="1583770371269">
+    <state width="1237" height="115" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583846194156" />
+    <state width="1237" height="115" key="GridCell.Tab.0.left" timestamp="1583846194156">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="115" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583770371269" />
-    <state width="1237" height="115" key="GridCell.Tab.0.right" timestamp="1583770371269">
+    <state width="1237" height="115" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583846194156" />
+    <state width="1237" height="115" key="GridCell.Tab.0.right" timestamp="1583846194156">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="115" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583770371269" />
+    <state width="1237" height="115" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583846194156" />
     <state x="164" y="29" width="1038" height="629" key="SettingsEditor" timestamp="1583409060573">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="164" y="29" width="1038" height="629" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1583409060573" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1583518888978">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1583780905064">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1583518888978" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1583780905064" />
     <state x="336" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1583742942287">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -224,6 +233,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="450" y="259" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1580723148528" />
+    <state x="355" y="132" key="git4idea.merge.GitPullDialog" timestamp="1583846223121">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="355" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1583846223121" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1583746565069">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
