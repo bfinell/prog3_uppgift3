@@ -21,6 +21,7 @@ public class DataFromURL {
     private String dSeries;
 
     public DataFromURL(String URL1,String URL2,String start,String stop,String dSeries){
+     this.URL1=null;
      this.URL1= URL1;
      this.URL2=URL2;
      this.dSeries=dSeries;

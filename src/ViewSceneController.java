@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import com.sun.media.sound.InvalidFormatException;
 
 
+
+
 public class ViewSceneController {
     @FXML
     private TextArea tArea,portfolioTextArea;
@@ -43,6 +45,8 @@ public class ViewSceneController {
     ObservableList<String> sizeList = FXCollections.observableArrayList();
 
 
+
+//fill combo boxes from .ini file
     private void fillLists()throws IOException{
         Ini ini = new Ini(new FileReader("./src/StockAnalyzer.ini"));
         String key = ini.get("controllInfo","API_KEY");
@@ -85,36 +89,53 @@ public class ViewSceneController {
     @FXML
     protected void handleQueryAction(ActionEvent event) throws InvalidFormatException{
 
-        //tArea.clear();
+                //checks if user wants 1 or 2 tickers
+                if (symbol2.getValue().isEmpty()) {
+                    //builds URL
+                    URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(), timeSeries.getValue(),
+                            symbol.getValue(), timeInterval.getValue(), size.getValue(), API_KEY.getValue());
+                    //Fetches data from alphavantage
+                    DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
+                            startDate.getText(), stopDate.getText(), dataSeries.getValue());
+                    //Fills textArea with data
+                    setData(dataFromURL.getKeyset(), dataFromURL.getOpen(), dataFromURL.getOpen2(),
+                            dataFromURL.getStart(), dataFromURL.getStop());
+
+                    Graph g = new Graph(symbol.getValue(), dataFromURL.getOpen(), dataFromURL.getKeyset(), symbol2.getValue(),
+                            dataFromURL.getOpen2(), dataFromURL.getKeyset2(), dataFromURL.getStart(), dataFromURL.getStop());
+
+                    g.setGraph();
+                    setGraph(g.getSeries(), symbol.getValue());
 
 
-               URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(), timeSeries.getValue(),
-                       symbol.getValue(), symbol2.getValue(), timeInterval.getValue(), size.getValue(), API_KEY.getValue());
+                }
+                else{
+                    //If user chooses 2 tickers
+                    URLBuilder urlBuilder = new URLBuilder(dataSeries.getValue(), timeSeries.getValue(),
+                            symbol.getValue(), symbol2.getValue(), timeInterval.getValue(), size.getValue(), API_KEY.getValue());
 
+                    DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(), urlBuilder.getFinalURL2(),
+                            startDate.getText(), stopDate.getText(), dataSeries.getValue());
 
-               DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(), urlBuilder.getFinalURL2(),
-                       startDate.getText(), stopDate.getText(), dataSeries.getValue());
+                    setData(dataFromURL.getKeyset(), dataFromURL.getOpen(), dataFromURL.getOpen2(),
+                            dataFromURL.getStart(), dataFromURL.getStop());
 
-               setData(dataFromURL.getKeyset(), dataFromURL.getOpen(), dataFromURL.getOpen2(),
-                       dataFromURL.getStart(), dataFromURL.getStop());
+                    Graph g = new Graph(symbol.getValue(), dataFromURL.getOpen(), dataFromURL.getKeyset(), symbol2.getValue(),
+                            dataFromURL.getOpen2(), dataFromURL.getKeyset2(), dataFromURL.getStart(), dataFromURL.getStop());
 
-               Graph g = new Graph(symbol.getValue(), dataFromURL.getOpen(), dataFromURL.getKeyset(), symbol2.getValue(),
-                       dataFromURL.getOpen2(), dataFromURL.getKeyset2(), dataFromURL.getStart(), dataFromURL.getStop());
+                    g.setGraph();
+                    setGraph(g.getSeries(), symbol.getValue());
+                    setGraph(g.getSeries2(), symbol2.getValue());
 
-               g.setGraph();
-               setGraph(g.getSeries(), symbol.getValue());
-               if (symbol2.getValue() != "") {
-                   setGraph(g.getSeries2(), symbol2.getValue());
+                    PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
 
-               }
+                    pearson.setText(String.valueOf(p.calculate()));
+                }
 
-        PearsonCorrelation p = new PearsonCorrelation(dataFromURL.getOpen(),dataFromURL.getOpen2());
-
-        pearson.setText(String.valueOf(p.calculate()));
 
     }
 
-    @FXML
+    @FXML //adds portfolio
     private void handelAddPortfolio(ActionEvent event)throws InvalidFormatException, NullPointerException{
         Portfolio portfolio = new Portfolio(addportfoliotname.getText());
         portfolios.add(portfolio);
@@ -122,7 +143,7 @@ public class ViewSceneController {
         portfoliobox.setItems(portfolioName);
             
     }
-    @FXML
+    @FXML //uppdates stock view to current portfolio
     private void handleSwapPortfolio(ActionEvent event){
         int index = 0;
 
@@ -142,14 +163,13 @@ public class ViewSceneController {
     @FXML
     private void handleBuyStock(ActionEvent event) {
         int index = 0;
-
+        // finds correct portfolio from Arraylist
         for (int i = 0; i < portfolios.size(); i++) {
             if (portfolios.get(i).getName() == portfoliobox.getValue()) {
                 index = i;
             }
         }
-        System.out.println(buyStockList.getValue());
-        System.out.println(buyDate.getText());
+
 
         URLBuilder urlBuilder = new URLBuilder(buyStockList.getValue(),buyDate.getText(), API_KEY.getValue());
         DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
@@ -165,7 +185,8 @@ public class ViewSceneController {
         }
         totalAmountBox.setText(Double.toString(portfolios.get(index).getPortfolioValue()));
     }
-//https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=2020.01.14&outputsize=null&apikey=ZR69NHOOT7AMCZH8
+
+    //Will add SellStock for next assignment
   /*  @FXML
     private void handleSellStock(ActionEvent event) {
         URLBuilder urlBuilder = new URLBuilder(sellStockList.getValue(), sellDate.getText(), API_KEY.getValue());
@@ -195,13 +216,11 @@ public class ViewSceneController {
 
     private void setData(ArrayList date, ArrayList price,ArrayList price2,int start, int stop) {
         date.remove(date.size() -1);
-        System.out.println("price "+price.size()+"2 "+price2.size());
-        System.out.println(date.get(2));
         int max = price.size()-1;
         if (max>price2.size()){
             max=price2.size()-1;
         }
-        if (symbol2.getValue() != "") {
+        if (!symbol2.getValue().isEmpty()) {
             for (int i = max-1; i >= 0; i--) {
 
                 int temp = Integer.parseInt(date.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));

@@ -54,7 +54,7 @@ public class Graph {
               //  return series;
             }
         }
-        if (!price2.isEmpty()) {
+        if (price2.get(0).toString()!="0") {
             this.series2 = new XYChart.Series<>();
             series2.setName(symbol2);
             this.stock_Graph.getData().add(series2);
