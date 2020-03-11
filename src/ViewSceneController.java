@@ -141,7 +141,7 @@ public class ViewSceneController {
         portfolios.add(portfolio);
         portfolioName.add(portfolio.getName());
         portfoliobox.setItems(portfolioName);
-        
+            
     }
     @FXML //uppdates stock view to current portfolio
     private void handleSwapPortfolio(ActionEvent event){

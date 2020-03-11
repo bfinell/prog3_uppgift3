@@ -4,6 +4,8 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.NumberAxis;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Graph {
 
@@ -26,6 +28,7 @@ public class Graph {
     this.date2=date2;
     this.start=start;
     this.stop=stop;
+
     }
     public Graph(){
 
@@ -36,14 +39,18 @@ public class Graph {
         stock_Graph = new LineChart<Number, Number>(xAxis,yAxis);
 
         this.series = new XYChart.Series<>();
+        Collections.reverse(price1);
+        Collections.reverse(price2);
+        Collections.reverse(date1);
+        Collections.reverse(date2);
+
 
 
       //  XYChart.Series<Number, Number> series = new XYChart.Series<>();
 
         series.setName(symbol1);
         //System.out.println("graph test"+symbol1+" aa "+date1.size());
-        this.stock_Graph.getData().add(series);
-        stock_Graph.setCreateSymbols(false);
+         stock_Graph.setCreateSymbols(false);
         for (int i = 1; i < date1.size() - 2; i++) {
             int temp = Integer.parseInt(date1.get(i).toString().replace("-", "").replaceAll(" ", "").substring(0, 8));
             if (temp >= start && temp <= stop) {
