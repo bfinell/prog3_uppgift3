@@ -1,3 +1,4 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
@@ -18,13 +19,18 @@ public class Portfolio {
     }
 
     public void addStocks(String symbol, String date, int amount, double stockValue) {
-        System.out.println(symbol);
-        System.out.println(date);
-        System.out.println(amount);
-        System.out.println(stockValue);
-        Stocks stock = new Stocks(symbol,date , amount, stockValue);
-        stocks.add(stock);
-        info.add(stock.info());
+        Boolean newStock = true;
+        for (Stocks s:stocks){
+            if (symbol==s.getSymbol()){
+                s.changeAmount(amount,stockValue);
+                newStock = false;
+            }
+        }
+        if (!newStock) {
+            Stocks stock = new Stocks(symbol, date, amount, stockValue);
+            stocks.add(stock);
+            info.add(stock.info());
+        }
     }
 
 
@@ -34,7 +40,7 @@ public class Portfolio {
             for (Stocks s:stocks){
                 if (s.getSymbol()==symbol){
                     double tempV=s.getTotValue();
-                    s.changeAmount(amount);
+                    s.changeAmount(amount,stockValue);
                     if (s.getTotValue()>=0){
                         cashMoney+=tempV-s.getTotValue();
                     }

@@ -15,9 +15,10 @@ public class Stocks {
         this.totValue = stockValue*amount;
 
     }
-    public void changeAmount(double newAmount){
+    public void changeAmount(double newAmount,double stockValue){
 
-        this.amount = amount-newAmount;
+        this.amount = amount+newAmount;
+        this.totValue = totValue + (newAmount*stockValue);
 
     }
     public double getTotValue() {
