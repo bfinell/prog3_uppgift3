@@ -1,13 +1,12 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-
 import java.awt.*;
 import java.util.ArrayList;
 
 public class Portfolio {
     private String name;
     private double portfolioValue=0;
-    private double cashMoney=0;
+    private double cashMoney=100000;
     @FXML
     private TextArea portfolioTextArea;
 
@@ -18,32 +17,42 @@ public class Portfolio {
     }
 
     public void addStocks(String symbol, String date, int amount, double stockValue) {
-        System.out.println(symbol);
-        System.out.println(date);
-        System.out.println(amount);
-        System.out.println(stockValue);
-        Stocks stock = new Stocks(symbol,date , amount, stockValue);
-        stocks.add(stock);
-        info.add(stock.info());
-    }
+        boolean newStock = true;
+        for (int i=0; i<stocks.size();i++){
+            if (symbol.equals(stocks.get(i).getSymbol())){
+
+                String temp = stocks.get(i).info();
+                stocks.get(i).changeAmount(amount,stockValue);
+                info.remove(info.get(i));
+                info.add(i,stocks.get(i).info());
+                cashMoney -= (amount*stockValue);
+                newStock = false;
+            }
+        }
+        if (newStock) {
+            Stocks stock = new Stocks(symbol, date, amount, stockValue);
+            stocks.add(stock);
+            info.add(stock.info());
+            cashMoney -= stock.getTotValue();
+            }
+        }
 
 
 
         //will implement this  att a later date
-        public double Sell(String symbol,int amount,double stockValue) {
-            for (Stocks s:stocks){
-                if (s.getSymbol()==symbol){
-                    double tempV=s.getTotValue();
-                    s.changeAmount(amount);
-                    if (s.getTotValue()>=0){
-                        cashMoney+=tempV-s.getTotValue();
-                    }
-                    if (s.getTotValue()<=0){
-                        stocks.remove(s);
-                        cashMoney+=tempV;
-                    }
+    public double Sell(String symbol,int amount,double stockValue) {
+        for (int i = 0; i< stocks.size(); i++){
+            if (stocks.get(i).getSymbol().equals(symbol)){
+                if (stocks.get(i).getAmount()>=amount) {
+                        stocks.get(i).changeAmount(amount, stockValue);
+                        cashMoney+=amount*stockValue;
+                }else {
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("WARNING");
+                        alert.setContentText("you cannot sell more then you own!");
                 }
             }
+        }
         return cashMoney;
     }
 
@@ -53,7 +62,9 @@ public class Portfolio {
     public ArrayList getStocks(){
         return info;
     }
-
+    public double getCashMoney(){
+        return cashMoney;
+    }
 
     public double getPortfolioValue() {
         portfolioValue = 0;

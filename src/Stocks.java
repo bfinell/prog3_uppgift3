@@ -15,15 +15,18 @@ public class Stocks {
         this.totValue = stockValue*amount;
 
     }
-    public void changeAmount(double newAmount){
+    public void changeAmount(double newAmount,double stockValue){
 
         this.amount = amount-newAmount;
-
+        this.stockValue = stockValue;
+        this.totValue = totValue + (newAmount*stockValue);
     }
     public double getTotValue() {
-
         return totValue;
+    }
 
+    public double getAmount() {
+        return amount;
     }
 
     public String getSymbol() {

@@ -67,6 +67,8 @@
       <Button fx:id="ClearButton" layoutX="340.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleClearButton" prefHeight="127.0" prefWidth="52.0" text="CLEAR" />
       <Text layoutX="518.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total portfolio value" wrappingWidth="110.00001901388168" />
       <TextField id="totalAmountBox" fx:id="totalAmountBox" editable="false" layoutX="635.0" layoutY="448.0" prefHeight="25.0" prefWidth="110.0" />
+      <Text layoutX="394.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cash" wrappingWidth="33.33333121240133" />
+      <TextField id="cashbox" fx:id="totalAmountBox1" editable="false" layoutX="427.0" layoutY="448.0" prefHeight="25.0" prefWidth="79.0" />
 
     </children>
 </AnchorPane>
