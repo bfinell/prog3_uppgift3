@@ -16,12 +16,11 @@ public class Portfolio {
         this.name = name;
     }
 
-    public void addStocks(String symbol, String date, int amount, double stockValue) {
+    public void addStocks(String symbol,int amount, double stockValue) {
         boolean newStock = true;
         for (int i=0; i<stocks.size();i++){
             if (symbol.equals(stocks.get(i).getSymbol())){
 
-                String temp = stocks.get(i).info();
                 stocks.get(i).changeAmount(amount,stockValue);
                 info.remove(info.get(i));
                 info.add(i,stocks.get(i).info());
@@ -30,7 +29,7 @@ public class Portfolio {
             }
         }
         if (newStock) {
-            Stocks stock = new Stocks(symbol, date, amount, stockValue);
+            Stocks stock = new Stocks(symbol, amount, stockValue);
             stocks.add(stock);
             info.add(stock.info());
             cashMoney -= stock.getTotValue();
@@ -40,20 +39,24 @@ public class Portfolio {
 
 
         //will implement this  att a later date
-    public double Sell(String symbol,int amount,double stockValue) {
+    public void sellStocks(String symbol,int amount,double stockValue) {
         for (int i = 0; i< stocks.size(); i++){
             if (stocks.get(i).getSymbol().equals(symbol)){
                 if (stocks.get(i).getAmount()>=amount) {
-                        stocks.get(i).changeAmount(amount, stockValue);
+                        stocks.get(i).changeAmount(-amount, stockValue);
                         cashMoney+=amount*stockValue;
+                        info.remove(info.get(i));
+                        info.add(i,stocks.get(i).info());
+
+
                 }else {
                         Alert alert = new Alert(Alert.AlertType.WARNING);
                         alert.setTitle("WARNING");
                         alert.setContentText("you cannot sell more then you own!");
+
                 }
             }
         }
-        return cashMoney;
     }
 
     public String getName() {

@@ -29,7 +29,7 @@ public class ViewSceneController {
     @FXML
     private LineChart<Number,Number> graph;
     @FXML
-    private TextField startDate,stopDate,buyDate,sellDate,buyAmount,sellAmount,addportfoliotname,pearson,totalAmountBox;
+    private TextField startDate,stopDate,buyDate,sellDate,buyAmount,sellAmount,addportfoliotname,pearson,totalAmountBox,cashBox;
 
     private XYChart.Series<Number,Number> series = new XYChart.Series<>();
     private XYChart.Series<Number,Number> series2 = new XYChart.Series<>();
@@ -81,6 +81,7 @@ public class ViewSceneController {
         symbol.setItems(symbolList);
         symbol2.setItems(symbolList);
         buyStockList.setItems(symbolList);
+        sellStockList.setItems(symbolList);
         timeInterval.setItems(tiList);
         size.setItems(sizeList);
     }
@@ -141,8 +142,9 @@ public class ViewSceneController {
         portfolios.add(portfolio);
         portfolioName.add(portfolio.getName());
         portfoliobox.setItems(portfolioName);
-            
-    }
+        cashBox.setText(Double.toString(portfolio.getCashMoney()));
+
+        }
     @FXML //uppdates stock view to current portfolio
     private void handleSwapPortfolio(ActionEvent event){
         int index = 0;
@@ -153,15 +155,15 @@ public class ViewSceneController {
             }
         }
         portfolioTextArea.clear();
-        for (int i = 0;i<portfolios.get(index).getStocks().size();i++){
-            portfolioTextArea.appendText(portfolios.get(index).getStocks().get(i).toString());
-        }
-        totalAmountBox.setText(Double.toString(portfolios.get(index).getPortfolioValue()));
+        setPortfolioData(index);
+
     }
 
 
     @FXML
     private void handleBuyStock(ActionEvent event) {
+        portfolioTextArea.clear();
+
         int index = 0;
         // finds correct portfolio from Arraylist
         for (int i = 0; i < portfolios.size(); i++) {
@@ -173,29 +175,46 @@ public class ViewSceneController {
 
         URLBuilder urlBuilder = new URLBuilder(buyStockList.getValue(),buyDate.getText(), API_KEY.getValue());
         DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
-                startDate.getText(),stopDate.getText(),dataSeries.getValue());
+                buyDate.getText(),dataSeries.getValue());
 
-        portfolios.get(index).addStocks(buyStockList.getValue().toString(),buyDate.getText(),
+        portfolios.get(index).addStocks(buyStockList.getValue(),
                 Integer.parseInt(buyAmount.getText()),
                 Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")));
+        setPortfolioData(index);
+    }
 
+    @FXML
+    private void handleSellStock(ActionEvent event) {
         portfolioTextArea.clear();
+
+        URLBuilder urlBuilder = new URLBuilder(buyStockList.getValue(),buyDate.getText(), API_KEY.getValue());
+        DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
+                sellDate.getText(),dataSeries.getValue());
+
+        int index = 0;
+        for (int i = 0; i < portfolios.size(); i++) {
+            if (portfolios.get(i).getName().equals( portfoliobox.getValue())) {
+                index = i;
+            }
+        }
+
+        portfolios.get(index).sellStocks(sellStockList.getValue(),
+                Integer.parseInt(sellAmount.getText()),
+                Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")));
+
+
+
+        setPortfolioData(index);
+
+    }
+    private void setPortfolioData(int index){
+
         for (int i = 0;i<portfolios.get(index).getStocks().size();i++){
             portfolioTextArea.appendText(portfolios.get(index).getStocks().get(i).toString());
         }
         totalAmountBox.setText(Double.toString(portfolios.get(index).getPortfolioValue()));
+        cashBox.setText(Double.toString(portfolios.get(index).getCashMoney()));
     }
-
-    //Will add SellStock for next assignment
-  /*  @FXML
-    private void handleSellStock(ActionEvent event) {
-        URLBuilder urlBuilder = new URLBuilder(sellStockList.getValue(), sellDate.getText(), API_KEY.getValue());
-        DataFromURL dataFromURL = new DataFromURL(urlBuilder.getFinalURL(),
-                startDate.getText(), stopDate.getText(), dataSeries.getValue());
-        Stocks stocks = new Stocks(sellStockList.getValue(), sellDate.getText(), Integer.parseInt(sellAmount.getText()), Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")));
-        portfolio.Sell(sellStockList.getValue(),Integer.parseInt(sellAmount.getText()),Double.parseDouble(dataFromURL.getOpen().get(0).replace("\"", "")))
-
-    }*/
 
     @FXML
     private void handleTimeSeriesAction(ActionEvent event){

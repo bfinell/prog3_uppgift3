@@ -36,6 +36,12 @@ public class DataFromURL {
         this.stop=stop;
         getData();
     }
+    public DataFromURL(String URL1,String start,String dSeries){
+        this.URL1= URL1;
+        this.dSeries=dSeries;
+        this.start=start;
+        getData();
+    }
 
     private void getData(){
 
@@ -114,7 +120,6 @@ public class DataFromURL {
     }
     protected int getStop(){
         String temp = stop.replace(".","");
-        System.out.println(temp);
         return Integer.parseInt(temp);
     }
 
