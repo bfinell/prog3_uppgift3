@@ -1,3 +1,5 @@
+package com.portfolio.model;
+
 import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 
 import java.util.ArrayList;

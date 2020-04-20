@@ -1,3 +1,5 @@
+package com.portfolio.model;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -113,12 +115,12 @@ public class DataFromURL {
         }
 
     }
-    protected int getStart()throws NullPointerException{
+    public int getStart()throws NullPointerException{
         System.out.println(start);
         String temp = start.replace(".","");
         return Integer.parseInt(temp);
     }
-    protected int getStop(){
+    public int getStop(){
         String temp = stop.replace(".","");
         return Integer.parseInt(temp);
     }

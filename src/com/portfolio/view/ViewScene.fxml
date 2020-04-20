@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="609.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewSceneController">
+<AnchorPane prefHeight="609.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.portfolio.controller.ViewSceneController">
     <children>
       <TextField id="buyDate" fx:id="buyDate" layoutX="81.0" layoutY="448.0" prefHeight="25.0" prefWidth="100.0" />
         <ComboBox fx:id="dataSeries" layoutX="139.0" layoutY="40.0" onAction="#handleQueryAction" prefWidth="200.0" promptText="1.open" value="1. open" />

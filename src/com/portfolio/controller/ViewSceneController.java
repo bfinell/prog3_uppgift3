@@ -1,4 +1,6 @@
+package com.portfolio.controller;
 
+import com.portfolio.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -48,7 +50,7 @@ public class ViewSceneController {
 
 //fill combo boxes from .ini file
     private void fillLists()throws IOException{
-        Ini ini = new Ini(new FileReader("./src/StockAnalyzer.ini"));
+        Ini ini = new Ini(new FileReader("src\\com\\portfolio\\controller\\StockAnalyzer.ini"));
         String key = ini.get("controllInfo","API_KEY");
         apiKey.setAll(key);
 

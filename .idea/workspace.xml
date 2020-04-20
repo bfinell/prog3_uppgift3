@@ -2,15 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b957241-1b79-417d-9b9f-9190aa525bd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Stocks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Stocks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFromURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFromURL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Portfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/DataFromURL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/PearsonCorrelation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Portfolio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/StockAnalyzer.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/Stocks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/URLBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prog3_uppg3_Finell_41145/ViewSceneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFromURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/model/DataFromURL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/model/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PearsonCorrelation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/model/PearsonCorrelation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/model/Portfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockAnalyzer.ini" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/controller/StockAnalyzer.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/model/Stocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/URLBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/model/URLBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/view/ViewScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/portfolio/controller/ViewSceneController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +53,10 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -68,6 +82,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\benjamin\IdeaProjects\prog3_uppgift3\src\com\portfolio\controller" />
+      <recent name="C:\Users\benjamin\IdeaProjects\prog3_uppgift3\src\modell" />
+      <recent name="C:\Users\benjamin\IdeaProjects\prog3_uppgift3\src\view" />
       <recent name="C:\Users\benjamin\Downloads\DST19_RO4\prog3_uppg3_Finell_41145\src" />
     </key>
   </component>
@@ -75,6 +92,19 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="prog3_uppg3_Finell_41145" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.portfolio.view.Main" />
+      <module name="prog3_uppg3_Finell_41145" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.portfolio.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,7 +145,11 @@
       <workItem from="1583408232313" duration="5199000" />
       <workItem from="1583742897205" duration="19310000" />
       <workItem from="1583937168100" duration="3927000" />
-      <workItem from="1583992744250" duration="2640000" />
+      <workItem from="1583992744250" duration="3571000" />
+      <workItem from="1584614704279" duration="9000" />
+      <workItem from="1585213198822" duration="82000" />
+      <workItem from="1587325387206" duration="5371000" />
+      <workItem from="1587408480199" duration="627000" />
     </task>
     <task id="LOCAL-00001" summary="~">
       <created>1566375690417</created>
@@ -163,26 +197,32 @@
       <option name="project" value="LOCAL" />
       <updated>1583960522286</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="Added sell stocks">
+      <created>1583995626007</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1583995626007</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="~" />
     <MESSAGE value="added librarys" />
     <MESSAGE value="fixed a few bugs" />
@@ -190,7 +230,8 @@
     <MESSAGE value="...." />
     <MESSAGE value="fixed bugs when not choosing 2 tickers" />
     <MESSAGE value="fixed portfolio bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed portfolio bug" />
+    <MESSAGE value="Added sell stocks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added sell stocks" />
   </component>
   <component name="WindowStateProjectService">
     <state x="321" y="70" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582101146274">
@@ -205,72 +246,89 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1580303418872" />
-    <state x="159" y="0" key="CommitChangelistDialog2" timestamp="1583960680712">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="239" y="0" key="CommitChangelistDialog2" timestamp="1583995624510">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="159" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1583960680712" />
-    <state x="239" y="0" key="CommitChangelistDialog2/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583783422591" />
-    <state x="391" y="85" key="FileChooserDialogImpl" timestamp="1583763396214">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="239" y="0" key="CommitChangelistDialog2/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583995624510" />
+    <state x="587" y="130" key="FileChooserDialogImpl" timestamp="1585213253413">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="391" y="85" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1583763396214" />
-    <state width="1877" height="393" key="GridCell.Tab.0.bottom" timestamp="1583995575128">
+    <state x="587" y="130" key="FileChooserDialogImpl/0.0.1920.1040/-1200.0.1200.1880/1920.0.1536.824@0.0.1920.1040" timestamp="1585213253413" />
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1587408242926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="184" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1583961882821" />
-    <state width="1877" height="393" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583995575128" />
-    <state width="1877" height="393" key="GridCell.Tab.0.center" timestamp="1583995575128">
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040/-1200.0.1200.1880@0.0.1920.1040" timestamp="1587408242926" />
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583996754624" />
+    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1587408242926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="184" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1583961882821" />
-    <state width="1877" height="393" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583995575128" />
-    <state width="1877" height="393" key="GridCell.Tab.0.left" timestamp="1583995575127">
+    <state width="1877" height="338" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040/-1200.0.1200.1880@0.0.1920.1040" timestamp="1587408242926" />
+    <state width="1877" height="338" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583996754624" />
+    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1587408242926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="184" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1583961882821" />
-    <state width="1877" height="393" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583995575127" />
-    <state width="1877" height="393" key="GridCell.Tab.0.right" timestamp="1583995575128">
+    <state width="1877" height="338" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040/-1200.0.1200.1880@0.0.1920.1040" timestamp="1587408242926" />
+    <state width="1877" height="338" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583996754623" />
+    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1587408242926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="184" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1583961882821" />
-    <state width="1877" height="393" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583995575128" />
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1583994846945">
+    <state width="1877" height="338" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040/-1200.0.1200.1880@0.0.1920.1040" timestamp="1587408242926" />
+    <state width="1877" height="338" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583996754624" />
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1587408242927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583994846945" />
-    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1583994846944">
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom/1920.0.1536.832/0.0.1920.1040/-1200.0.1200.1880@0.0.1920.1040" timestamp="1587408242927" />
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583996754626" />
+    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1587408242926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583994846944" />
-    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1583994846944">
+    <state width="1877" height="338" key="GridCell.Tab.1.center/1920.0.1536.832/0.0.1920.1040/-1200.0.1200.1880@0.0.1920.1040" timestamp="1587408242926" />
+    <state width="1877" height="338" key="GridCell.Tab.1.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583996754626" />
+    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1587408242926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583994846944" />
-    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1583994846945">
+    <state width="1877" height="338" key="GridCell.Tab.1.left/1920.0.1536.832/0.0.1920.1040/-1200.0.1200.1880@0.0.1920.1040" timestamp="1587408242926" />
+    <state width="1877" height="338" key="GridCell.Tab.1.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583996754626" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1587408242927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583994846945" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040/-1200.0.1200.1880@0.0.1920.1040" timestamp="1587408242927" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583996754626" />
     <state x="164" y="29" width="1038" height="629" key="SettingsEditor" timestamp="1583409060573">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="164" y="29" width="1038" height="629" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1583409060573" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1583960689276">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="350" y="113" key="Vcs.Push.Dialog.v2" timestamp="1583995633721">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1583960689276" />
-    <state x="504" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1583992746861">
+    <state x="350" y="113" key="Vcs.Push.Dialog.v2/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583995633721" />
+    <state x="504" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1585213240359">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="336" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1583937192777" />
+    <state x="504" y="254" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1200.0.1200.1880/1920.0.1536.824@0.0.1920.1040" timestamp="1585213240359" />
+    <state x="504" y="254" key="com.intellij.ide.util.TipDialog/1920.0.1536.832/0.0.1920.1040/-1200.0.1200.1880@0.0.1920.1040" timestamp="1584614709930" />
     <state x="504" y="254" key="com.intellij.ide.util.TipDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1583992746861" />
-    <state x="450" y="259" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583960731579">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="675" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587325397373">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="450" y="259" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1583960731579" />
+    <state x="675" y="396" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1587325397373" />
     <state x="355" y="132" key="git4idea.merge.GitPullDialog" timestamp="1583960756959">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="355" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1583960756959" />
+    <state x="253" y="155" key="new project wizard" timestamp="1585213276799">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="253" y="155" key="new project wizard/0.0.1920.1040/-1200.0.1200.1880/1920.0.1536.824@0.0.1920.1040" timestamp="1585213276799" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1583962476627">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

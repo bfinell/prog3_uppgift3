@@ -1,3 +1,5 @@
+package com.portfolio.model;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import java.awt.*;

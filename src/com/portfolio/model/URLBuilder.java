@@ -1,3 +1,5 @@
+package com.portfolio.model;
+
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;

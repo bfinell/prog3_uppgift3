@@ -1,3 +1,5 @@
+package com.portfolio.model;
+
 import java.text.DecimalFormat;
 
 public class Stocks {
